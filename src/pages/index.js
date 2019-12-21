@@ -4,17 +4,17 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import MainSection from "../components/sections/main"
+import AboutSection from "../components/sections/about"
+import ContactSection from "../components/sections/contact"
+import Img from "gatsby-image"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <MainSection />
+    <AboutSection />
+    <ContactSection />
   </Layout>
 )
 

@@ -1,0 +1,181 @@
+/* in the name of allah */
+/* public */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+p {
+  line-height: 39px;
+}
+
+img {
+  max-width: 100%;
+}
+
+div,
+section,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* end public */
+.caption {
+  width: 600px;
+}
+
+.text-primary-title {
+  color: #17a2b8;
+}
+
+.grid-item {
+  width: 300px;
+  height: 150px;
+}
+
+/* masonry items */
+.masonry-items {
+  column-count: 3;
+}
+
+.masonry-items > .item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  text-align: center;
+}
+.masonry-items > .item .item-wrapper,
+.masonry-items > .item .item-wrapper > .item-inner {
+  -moz-transition: all 300ms ease-out;
+  -webkit-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+.masonry-items > .item .item-wrapper {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, 0);
+  color: #f7f8f9;
+  opacity: 0;
+}
+.masonry-items > .item .item-wrapper .item-inner {
+  transform: translateY(70%);
+}
+.masonry-items > .item .item-wrapper:hover {
+  background-color: rgba(100, 100, 100, 0.8);
+  opacity: 1;
+}
+.masonry-items > .item .item-wrapper:hover .item-inner {
+  transform: translateY(50%);
+}
+
+/* end masonry items */
+/* main head section */
+section.main-head {
+  position: relative;
+  /* background-image: linear-gradient(87deg, #244ff1, #6f32e1); */
+  background: #d6e6f2;
+  height: 600px;
+}
+section.main-head .main-head-container {
+  height: 600px;
+}
+section.main-head .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+section.main-head .inner .title {
+  color: #555;
+}
+section.main-head .inner h3 {
+  font-size: 48px;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: #044ff1;
+}
+section.main-head .inner p {
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+/* end main head section */
+/* about me section */
+section.about-me {
+  margin-top: 5rem;
+}
+section.about-me .inner-picture {
+  max-width: 100%;
+  max-height: 100%;
+  width: 200px;
+  height: 200px;
+}
+section.about-me .inner-picture img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* end about me */
+/* latest works */
+section.latest-works {
+  background-color: #f9f9fe;
+}
+
+/* end latest works */
+/* contat section */
+section.contact {
+  background: #d6e6f2 url("../images/back/bg6.png") no-repeat center center;
+}
+section.contact .inner-contact h3 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* end contact section */
+/* footer */
+footer.main-footer {
+  background-color: #f9f9fe;
+}
+
+/* end footer */
+/* responsive breakpoints */
+@media (max-width: 767.98px) {
+  .caption {
+    width: 100%;
+  }
+
+  .masonry-items {
+    column-count: 1;
+  }
+}
+@media (max-width: 991.98px) {
+  .main-head-container {
+    background: none !important;
+  }
+
+  .masonry-items {
+    column-count: 2;
+  }
+}
+@media (max-width: 1199.98px) {
+  .main-head-container {
+    background-position-x: -70px !important;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */
