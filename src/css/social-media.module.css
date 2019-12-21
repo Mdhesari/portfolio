@@ -1,0 +1,18 @@
+.social-icons {
+  list-style-type: none;
+}
+
+.social-icons > li {
+
+  display: inline-block;
+  margin:0 15px;
+}
+
+.social-icons > li a {
+    color:#666;
+    font-size: 24px;
+}
+
+.social-icons > li a:hover {
+    color:rgb(30, 142, 194);
+}

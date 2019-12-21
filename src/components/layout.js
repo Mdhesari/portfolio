@@ -8,10 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import "./layout.css"
 import "../styles/bootstrap.css"
+import SocialMedia from "./SocialMedia"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,8 +30,11 @@ const Layout = ({ children }) => {
       <div>
         <main>{children}</main>
         <footer class="main-footer pt-5">
+          <SocialMedia />
           <div class="container">
-            <p class="text-center my-3">© {new Date().getFullYear()}, Built with ❤️ 2019</p>
+            <p class="text-center my-3">
+              © {new Date().getFullYear()}, Built with ❤️
+            </p>
           </div>
         </footer>
       </div>
