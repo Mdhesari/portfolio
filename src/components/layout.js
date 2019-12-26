@@ -11,7 +11,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import "../styles/bootstrap.css"
+import "jquery/dist/jquery.slim"
+import "bootstrap/dist/js/bootstrap"
 import SocialMedia from "./SocialMedia"
+import { FaCode, FaHeart } from "react-icons/fa"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,11 +32,11 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
-        <footer class="main-footer pt-5">
+        <footer className="main-footer pt-5">
           <SocialMedia />
-          <div class="container">
-            <p class="text-center my-3">
-              © {new Date().getFullYear()}, Built with ❤️
+          <div className="container">
+            <p className="text-center my-3">
+              © {new Date().getFullYear()}, <FaCode className="text-secondary" /> Built with <FaHeart className="text-danger" /> 
             </p>
           </div>
         </footer>

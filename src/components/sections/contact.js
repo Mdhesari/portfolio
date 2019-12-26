@@ -5,9 +5,9 @@ export default () => (
     <div className="container">
       <div className="inner-contact text-center py-5">
         <h3>Can I help you there?</h3>
-        <a href="#contact" className="btn btn-info btn-lg mt-4">
+        <button data-target="#contact" data-toggle="modal" className="btn btn-info btn-lg mt-4">
           Contact Me
-        </a>
+        </button>
       </div>
     </div>
   </section>

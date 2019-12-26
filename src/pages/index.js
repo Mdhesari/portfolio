@@ -1,13 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/Seo"
 import MainSection from "../components/sections/main"
 import AboutSection from "../components/sections/about"
 import ContactSection from "../components/sections/contact"
-import Img from "gatsby-image"
+import ContactModel from "../components/ContactModel"
 
 const IndexPage = () => (
   <Layout>
@@ -15,6 +12,7 @@ const IndexPage = () => (
     <MainSection />
     <AboutSection />
     <ContactSection />
+    <ContactModel />
   </Layout>
 )
 

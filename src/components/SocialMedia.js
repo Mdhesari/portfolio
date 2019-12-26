@@ -8,9 +8,9 @@ export default () => (
     <ul className={styles.socialIcons}>
       {socialLinks.map((item, index) => (
         <li key={index}>
-          <Link to={item.link}>
+          <a href={item.link}>
             <span>{item.icon}</span>
-          </Link>
+          </a>
         </li>
       ))}
     </ul>

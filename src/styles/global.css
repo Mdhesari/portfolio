@@ -25,6 +25,12 @@ p {
   padding: 0;
 }
 
+.btn-full {
+  width:100%;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
 /* end public */
 .caption {
   width: 600px;
