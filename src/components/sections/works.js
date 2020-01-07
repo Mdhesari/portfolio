@@ -1,20 +1,39 @@
 import React from "react"
+import MasnoryItem from "../MasnoryItem"
+import { graphql, useStaticQuery } from "gatsby"
 
-export default () => (
-  <section className="latest-works mt-5">
-    <div className="container">
-      <h3 className="text-center py-5 text-primary-title">Latest Projects</h3>
+const getWorks = graphql`
+  query {
+    all: allContentfulWorks {
+      edges {
+        node {
+          pictures {
+            fluid {
+              src
+            }
+          }
+          description
+          id: contentful_id
+          slug
+          title
+        }
+      }
+    }
+  }
+`
 
-      <div className="masonry-items pb-5">
-        <div className="item">
-          <a href="#" class="item-wrapper">
-            <div class="item-inner">
-              <h5>Project Title</h5>
-              <p>Smart system for data detection and data protection</p>
-            </div>
-          </a>
-        </div>
+export default () => {
+
+  const works = useStaticQuery(getWorks)
+
+  return (
+    <section className="latest-works mt-5">
+      <div className="container">
+        <h3 className="text-center py-5 text-primary-title">Latest Projects</h3>
+        {works.all.edges.map(({ node }) => (
+          <MasnoryItem key={node.id} work={node} />
+        ))}
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}

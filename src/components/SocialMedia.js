@@ -1,6 +1,5 @@
 import React from "react"
 import socialLinks from "../constants/social-media-links"
-import { Link } from "gatsby"
 import styles from "../css/social-media.module.css"
 
 export default () => (

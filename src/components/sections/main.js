@@ -1,5 +1,4 @@
 import React from "react"
-import {Link} from "gatsby"
 
 export default () => (
   <section className="main-head">
@@ -13,7 +12,7 @@ export default () => (
           <p>Web application developer & tech enthusiastic</p>
 
           <div className="actions mt-4">
-            <Link to="#modal" className="btn btn-success mr-1">Contact Me</Link>
+            <button data-target="#contact" data-toggle="modal" className="btn btn-success mr-1">Contact Me</button>
           </div>
         </div>
       </div>
