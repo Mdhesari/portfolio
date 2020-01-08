@@ -1,9 +1,6 @@
 module.exports = {
-  siteMetadata: {
-    title: `Hello World`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-  },
+  pathPrefix: "/",
+  siteMetadata: require("./siteMetadata.json"),
   plugins: [
     `gatsby-plugin-styled-components`,
     {

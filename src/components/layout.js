@@ -1,25 +1,15 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import Header from "./header"
+import Header from "./Header"
 import SocialMedia from "./SocialMedia"
 import { FaCode, FaHeart } from "react-icons/fa"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <div>
         <main>{children}</main>
         <footer className="main-footer pt-5">

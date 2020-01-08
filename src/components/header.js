@@ -2,7 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Navbar from "./Navbar"
 
-const Header = ({ siteTitle, titleType }) => (
+const Header = () => (
   <header className="main-header bg-light">
     <div className="container-md">
       <Navbar />

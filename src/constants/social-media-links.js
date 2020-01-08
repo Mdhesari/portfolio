@@ -8,14 +8,14 @@ export default [
   },
   {
     icon: <FaLinkedin />,
-    link: "https://linkedin.com",
+    link: "https://linkedin.com/in/mohamad-fazel-hesari",
   },
   {
     icon: <FaTwitter />,
-    link: "https://twitter.com/realfazel",
+    link: "https://twitter.com/mdhesari",
   },
   {
     icon: <FaTelegram />,
-    link: "https://telegram.com/realfazel",
+    link: "https://telegram.com/mdhesari",
   },
 ]
