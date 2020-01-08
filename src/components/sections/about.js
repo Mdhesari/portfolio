@@ -1,9 +1,18 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 const getData = graphql`
   query {
+    site {
+      siteMetadata {
+        about {
+          title
+          description
+          button_text
+        }
+      }
+    }
     resume: allContentfulResume(
       limit: 1
       sort: { fields: createdAt, order: DESC }
@@ -18,10 +27,15 @@ const getData = graphql`
         }
       }
     }
-    profileImage: file(relativePath: { eq: "me-3.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
+    profilePicture: allContentfulAsset(
+      filter: { title: { eq: "profile" } }
+      limit: 1
+    ) {
+      edges {
+        node {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
         }
       }
     }
@@ -31,7 +45,11 @@ const getData = graphql`
 export default () => {
   const data = useStaticQuery(getData)
 
-  const pdf_url = "https://" + data.resume.edges[0].node.pdf.file.url
+  const { profilePicture, resume, site } = data
+
+  const { title, description, button_text } = site.siteMetadata.about
+
+  const pdf_url = "https://" + resume.edges[0].node.pdf.file.url
 
   return (
     <section className="about-me">
@@ -39,15 +57,19 @@ export default () => {
         <div className="row">
           <div className="col text-center">
             <div className="inner-picture mx-auto">
-              <Img fluid={data.profileImage.childImageSharp.fluid} />
+              <Img fluid={profilePicture.edges[0].node.fluid} />
             </div>
-            <h3 className="text-primary-title">About Me</h3>
+            <h3 className="text-primary-title">{title}</h3>
             <p className="mt-3 text-secondary caption mx-auto lead">
-              hey there, mohamad fazel is technology and nature lover, he always
-              tries to be creative and productive every minute of his life.
+              {description}
             </p>
-            <a href={pdf_url} target="_blank" className="btn btn-outline-primary btn-sm mr-1 mt-3">
-              Download CV
+            <a
+              href={pdf_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline-primary btn-sm mr-1 mt-3"
+            >
+              {button_text}
             </a>
           </div>
         </div>
