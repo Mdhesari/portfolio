@@ -31,6 +31,7 @@ p {
 }
 
 img {
+  margin: 0;
   max-width: 100%;
 }
 
@@ -41,6 +42,11 @@ p {
   padding: 0;
 }
 /* end public */
+
+.nav-item {
+  margin: 0 !important;
+}
+
 .caption {
   width: 600px;
 }
@@ -142,7 +148,7 @@ section.about-me {
 
   .inner-picture {
     max-width: 100%;
-    max-height:100%;
+    max-height: 100%;
     width: $profile-pic-size;
     height: $profile-pic-size;
     img {
