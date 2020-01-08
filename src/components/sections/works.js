@@ -23,16 +23,17 @@ const getWorks = graphql`
 `
 
 export default () => {
-
   const works = useStaticQuery(getWorks)
 
   return (
     <section className="latest-works mt-5">
       <div className="container">
         <h3 className="text-center py-5 text-primary-title">Latest Projects</h3>
-        {works.all.edges.map(({ node }) => (
-          <MasnoryItem key={node.id} work={node} />
-        ))}
+        <div className="masonry-items pb-5">
+          {works.all.edges.map(({ node }) => (
+            <MasnoryItem key={node.id} work={node} />
+          ))}
+        </div>
       </div>
     </section>
   )
