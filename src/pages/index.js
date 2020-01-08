@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
-import SEO from "../components/Seo"
+import Seo from "../components/Seo"
 import MainSection from "../components/sections/Main"
 import AboutSection from "../components/sections/About"
 import ContactSection from "../components/sections/Contact"
@@ -9,7 +9,7 @@ import WorksSection from "../components/sections/Works"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <Seo title="Home" />
     <MainSection />
     <AboutSection />
     <WorksSection />
