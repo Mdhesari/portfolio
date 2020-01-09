@@ -17,6 +17,7 @@ const getWorks = graphql`
           id: contentful_id
           slug
           title
+          url
         }
       }
     }
@@ -29,7 +30,7 @@ export default () => {
   return (
     <section className="latest-works mt-5">
       <div className="container">
-        <Title className="text-center py-5">Latest Projects</Title>
+        <Title className="text-center pt-5">Latest Projects</Title>
         <div className="masonry-items pb-5">
           {works.all.edges.map(({ node }) => (
             <MasnoryItem key={node.id} work={node} />

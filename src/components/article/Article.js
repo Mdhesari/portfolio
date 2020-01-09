@@ -10,6 +10,7 @@ export default () => {
           <img
             src="https://res.cloudinary.com/practicaldev/image/fetch/s--PrTRaauJ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/694a8it7vcim8berxrjj.png"
             class="card-img-top"
+            alt=""
           />
         </div>
         <div class="card-body">

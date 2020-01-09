@@ -51,6 +51,10 @@ p {
   height: 18em;
 }
 
+.blog-card:hover .card-title {
+  color: #044ff1;
+}
+
 .blog-card,
 .blog-card img {
   border-top-left-radius: 8px !important;
@@ -65,7 +69,8 @@ p {
   width: 600px;
 }
 
-.text-primary-title, .text-primary-title a {
+.text-primary-title,
+.text-primary-title a {
   color: #17a2b8;
   font-size: 34px;
 }
@@ -124,13 +129,28 @@ p {
   border-radius: 4px;
   padding: 10px;
 }
-.masonry-items > .item-box .item-title {
+.masonry-items > .item-box .item-wrapper {
+  position: relative;
+  opacity: 1;
+}
+.masonry-items > .item-box .item-wrapper .item-inner {
+  transform: none;
+}
+.masonry-items > .item-box .item-wrapper:hover {
+  background: rgba(100, 100, 100, 0);
+}
+.masonry-items > .item-box .item-wrapper:hover .item-inner {
+  transform: none;
+}
+.masonry-items > .item-box h5 {
   color: #555;
 }
-.masonry-items > .item-box .item-caption {
+.masonry-items > .item-box p {
   color: #5f5f5f;
+  font-size: 16px;
 }
-.masonry-items > .item-box:hover .item-title, .masonry-items > .item-box:hover .item-caption {
+.masonry-items > .item-box .item-wrapper:hover .item-title,
+.masonry-items > .item-box .item-wrapper:hover h5 {
   color: #044ff1;
 }
 
