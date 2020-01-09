@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import Title from "../Title"
 
 const getData = graphql`
   query {
@@ -56,10 +57,15 @@ export default () => {
       <div className="container">
         <div className="row">
           <div className="col text-center">
-            <div className="inner-picture mx-auto">
-              <Img fluid={profilePicture.edges[0].node.fluid} />
-            </div>
-            <h3 className="text-primary-title">{title}</h3>
+            {profilePicture.edges.length > 0 ? (
+              <div className="inner-picture mx-auto">
+                <Img fluid={profilePicture.edges[0].node.fluid} />
+              </div>
+            ) : (
+              ""
+            )}
+
+            <Title>{title}</Title>
             <p className="mt-3 text-secondary caption mx-auto lead">
               {description}
             </p>
