@@ -22,6 +22,7 @@ const getWorks = graphql`
           slug
           title
           url
+          technologies
         }
       }
     }

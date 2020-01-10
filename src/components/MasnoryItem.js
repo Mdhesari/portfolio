@@ -1,7 +1,8 @@
 import React from "react"
+import Linker from "./Linker"
 
 export default ({ work }) => {
-  const { pictures, title, description, slug, url } = work
+  const { pictures, title, description, slug, url, technologies } = work
 
   let has_picture = pictures !== null
 
@@ -12,7 +13,7 @@ export default ({ work }) => {
   return (
     <div className={class_name}>
       {has_picture ? <img src={pictures[0].fluid.src} alt={title} /> : ""}
-      <a href={full_url} className="item-wrapper">
+      <Linker url={full_url} className="item-wrapper" isLocal={url === null}>
         <div className="item-inner">
           <h5>{title}</h5>
           <p>{description}</p>
@@ -20,12 +21,17 @@ export default ({ work }) => {
             ""
           ) : (
             <ul className="list-group list-group-horizontal list-technologies text-dark">
-              <li class="list-group-item">javascript</li>
-              <li class="list-group-item">reactjs</li>
+              {technologies.map((item, index) => {
+                return (
+                  <li key={index} className="list-group-item">
+                    {item}
+                  </li>
+                )
+              })}
             </ul>
           )}
         </div>
-      </a>
+      </Linker>
     </div>
   )
 }
