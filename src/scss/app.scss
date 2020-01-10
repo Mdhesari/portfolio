@@ -47,7 +47,13 @@ p {
   padding: 0;
 }
 /* end public */
-
+.list-technologies > li {
+  border: 0;
+  margin: 0 5px;
+  font-size: 13px;
+  padding:4px 8px;
+  color:#999;
+}
 
 .swal-text {
   line-height: 30px;
@@ -57,7 +63,7 @@ p {
   padding-left: 19px;
 }
 
-.card-img-fix-height > div{
+.card-img-fix-height > div {
   height: 300px;
 }
 
