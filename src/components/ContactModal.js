@@ -72,6 +72,8 @@ export default class ContactModal extends React.Component {
   }
 
   submitForm(ev) {
+    const alertData = this.props.data.contact.alert
+
     // prevent default behavior
     ev.preventDefault()
 
@@ -91,21 +93,13 @@ export default class ContactModal extends React.Component {
       if (xhr.status === 200) {
         // success
         this.setState({ status: 1 })
-        swal(
-          "Your data is submitted and we are going to contact you soon!",
-          "+989105667705",
-          "success"
-        )
+        swal(alertData.success.title, alertData.success.body, "success")
         form.reset()
         document.querySelector("#contact-close-btn").click()
       } else {
         // failed
         this.setState({ status: 0 })
-        swal(
-          "Something went wrong, please try again later.",
-          "Be careful to enter valid values!",
-          "error"
-        )
+        swal(alertData.error.title, alertData.error.body, "error")
       }
     }
 

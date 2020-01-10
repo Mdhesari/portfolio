@@ -13,6 +13,17 @@
     "button_text": "Download CV"
   },
   "contact": {
-    "success":
+    "alert": {
+      "success": {
+        "title": "Thank you! I'll be in touch soon",
+        "body": "Make sure, you have provided right.",
+        "button_text": "Ok, sure"
+      },
+      "error": {
+        "title": "Something went wrong!",
+        "body": "You may have entered wrong information, otherwise the problem is with the server, try again later or you can contact me by +989105667705 number.",
+        "button_text": "Ok"
+      }
+    }
   }
 }

@@ -4,7 +4,6 @@ import Seo from "../components/Seo"
 import MainSection from "../components/sections/Main"
 import AboutSection from "../components/sections/About"
 import ContactSection from "../components/sections/Contact"
-import ContactModal from "../components/ContactModal"
 import WorksSection from "../components/sections/Works"
 import ArticlesSection from "../components/sections/Articles"
 
@@ -16,7 +15,7 @@ const IndexPage = () => (
     <WorksSection />
     <ContactSection />
     <ArticlesSection />
-    <ContactModal />
+   
   </Layout>
 )
 
