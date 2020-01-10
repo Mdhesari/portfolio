@@ -17,11 +17,17 @@ $blog-card-border-radius: 8px;
 @import "../../node_modules/bootstrap/scss/mixins";
 
 /* public */
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
 }
+
+
 
 a {
   text-decoration: none !important;
@@ -44,6 +50,18 @@ p {
 }
 /* end public */
 
+.modal {
+  padding-left:19px;
+}
+
+.card-img-top > div {
+  height: 300px;
+}
+
+.radius-0 {
+  border-radius: 0 !important;
+}
+
 .blog-card {
   margin: 0 1em;
   border: none;
@@ -65,8 +83,8 @@ p {
 }
 
 .blog-card:hover {
-  .card-title{
-    color:$blue-primary;
+  .card-title {
+    color: $blue-primary;
   }
 }
 
@@ -151,12 +169,11 @@ p {
     }
 
     .item-wrapper:hover {
-      background:rgba(100, 100, 100, 0);
+      background: rgba(100, 100, 100, 0);
 
       .item-inner {
         transform: none;
       }
-
     }
 
     h5 {
@@ -165,7 +182,7 @@ p {
 
     p {
       color: #5f5f5f;
-      font-size:16px;
+      font-size: 16px;
     }
 
     background: #f1f2f3;
@@ -257,6 +274,22 @@ section.contact {
 }
 /* end contact section */
 
+/* contact form */
+.contact-form .form-control {
+  background:#e8e8e8;
+  color:#40615c;
+}
+
+.contact-form label {
+  color:#6f6f6f;
+  padding-left:2px;
+}
+
+.contact-form .form-control::placeholder {
+  color:#b0b1b1;
+}
+/* end contact form */
+
 /* footer */
 footer.main-footer {
   background-color: $custom-gray;
@@ -270,6 +303,10 @@ footer.main-footer {
   }
   .masonry-items {
     column-count: 1;
+  }
+
+  body.modal-open {
+    height: 100%;
   }
 }
 

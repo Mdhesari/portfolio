@@ -1,5 +1,9 @@
 /* in the name of allah */
 /* public */
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -27,6 +31,18 @@ p {
 }
 
 /* end public */
+.modal {
+  padding-left: 19px;
+}
+
+.card-img-top > div {
+  height: 300px;
+}
+
+.radius-0 {
+  border-radius: 0 !important;
+}
+
 .blog-card {
   margin: 0 1em;
   border: none;
@@ -216,6 +232,22 @@ section.contact .inner-contact h3 {
 }
 
 /* end contact section */
+/* contact form */
+.contact-form .form-control {
+  background: #e8e8e8;
+  color: #40615c;
+}
+
+.contact-form label {
+  color: #6f6f6f;
+  padding-left: 2px;
+}
+
+.contact-form .form-control::placeholder {
+  color: #b0b1b1;
+}
+
+/* end contact form */
 /* footer */
 footer.main-footer {
   background-color: #f9f9fe;
@@ -230,6 +262,10 @@ footer.main-footer {
 
   .masonry-items {
     column-count: 1;
+  }
+
+  body.modal-open {
+    height: 100%;
   }
 }
 @media (max-width: 991.98px) {
