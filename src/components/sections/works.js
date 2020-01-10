@@ -1,11 +1,11 @@
 import React from "react"
 import MasnoryItem from "../MasnoryItem"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery,Link } from "gatsby"
 import Title from "../Title"
 
 const getWorks = graphql`
   query {
-    all: allContentfulWorks {
+    all: allContentfulWorks(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
           pictures {
@@ -30,7 +30,9 @@ export default () => {
   return (
     <section className="latest-works mt-5">
       <div className="container">
-        <Title className="text-center pt-5">Latest Projects</Title>
+        <Title className="text-center pt-5">
+          <Link to="/works/">Recent Works</Link>
+        </Title>
         <div className="masonry-items pb-5">
           {works.all.edges.map(({ node }) => (
             <MasnoryItem key={node.id} work={node} />

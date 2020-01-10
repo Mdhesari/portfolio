@@ -47,10 +47,6 @@ p {
   height: 100%;
 }
 
-.card-inner-img-top {
-  height: 18em;
-}
-
 .blog-card:hover .card-title {
   color: #044ff1;
 }

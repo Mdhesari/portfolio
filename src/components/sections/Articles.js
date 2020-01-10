@@ -14,7 +14,6 @@ const getArticles = graphql`
         node {
           id: contentful_id
           title
-          excerpt
           slug
           thumbnailImage {
             fluid {
@@ -34,9 +33,9 @@ export default () => {
 
   return (
     <section className="articles my-4 py-4">
-      <div className="container-md">
+      <div className="container-lg">
         <Title className="text-center">
-          <Link to="#">Latest Articles</Link>
+          <Link to="/articles/">Latest Articles</Link>
         </Title>
         <CardGroup>
           {articles.edges.map(({ node }) => (

@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import GImage from "gatsby-image"
 
 export default ({ article }) => {
-  let { title, thumbnailImage, slug, excerpt } = article
+  let { title, thumbnailImage, slug} = article
 
   slug = "/articles/" + slug
 
@@ -20,7 +20,6 @@ export default ({ article }) => {
         </div>
         <div className="card-body">
           <h5 className="card-title text-center">{title}</h5>
-          {/* <p className="card-text">{excerpt}</p> */}
         </div>
       </Link>
     </Card>
