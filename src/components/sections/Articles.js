@@ -2,18 +2,46 @@ import React from "react"
 import CardGroup from "../CardGroup"
 import Article from "../article/Article"
 import Title from "../Title"
+import { graphql, Link, useStaticQuery } from "gatsby"
+
+const getArticles = graphql`
+  query {
+    articles: allContentfulArticles(
+      sort: { fields: createdAt, order: DESC }
+      limit: 3
+    ) {
+      edges {
+        node {
+          id: contentful_id
+          title
+          excerpt
+          slug
+          thumbnailImage {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default () => {
+  const { articles } = useStaticQuery(getArticles)
+
+  console.log(articles)
+
   return (
     <section className="articles my-4 py-4">
       <div className="container-md">
         <Title className="text-center">
-          <a href="#">Latest Articles</a>
+          <Link to="#">Latest Articles</Link>
         </Title>
         <CardGroup>
-          <Article />
-          <Article />
-          <Article />
+          {articles.edges.map(({ node }) => (
+            <Article key={node.id} article={node} />
+          ))}
         </CardGroup>
       </div>
     </section>
