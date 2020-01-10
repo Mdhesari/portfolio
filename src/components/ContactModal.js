@@ -65,6 +65,7 @@ export default class ContactModal extends React.Component {
           <input
             type="submit"
             className="btn btn-success btn-full py-3 w-100 border-0 radius-0"
+            value="Send"
           />
         </form>
       </SimpleModal>

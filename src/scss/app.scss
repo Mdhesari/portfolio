@@ -50,6 +50,10 @@ p {
 }
 /* end public */
 
+.swal-text {
+  line-height:30px;
+}
+
 .modal {
   padding-left:19px;
 }
@@ -104,8 +108,8 @@ p {
 
 .text-primary-title,
 .text-primary-title a {
-  color: $cyan;
-  font-size: 34px;
+  color: $blue-primary;
+  font-size: 38px;
 }
 
 .text-primary-title {
