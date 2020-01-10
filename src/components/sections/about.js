@@ -70,8 +70,6 @@ export default () => {
 
   const { profilePicture, resume, site } = data
 
-  const { title, description, button_text } = site.siteMetadata.about
-
   const pdf_url = "https://" + resume.edges[0].node.pdf.file.url
 
   let aboutProfile = data.aboutProfile.edges[0].node
@@ -101,7 +99,7 @@ export default () => {
               rel="noopener noreferrer"
               className="btn btn-outline-primary btn-sm mr-1 mt-3"
             >
-              {aboutProfile.buttonText}
+              {aboutProfile.buttonText }
             </a>
           </div>
         </div>
