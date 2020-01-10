@@ -13,7 +13,7 @@ export default ({ article }) => {
       <Link to={slug}>
         <div className="card-inner-img-top">
           {thumbnailImage !== null ? (
-            <GImage fluid={thumbnailImage.fluid} className="card-img-top" alt={title} />
+            <GImage fluid={thumbnailImage.fluid} className="card-img-top card-img-fix-height" alt={title} />
           ) : (
             ""
           )}

@@ -27,8 +27,6 @@ body {
   padding: 0;
 }
 
-
-
 a {
   text-decoration: none !important;
 }
@@ -50,16 +48,31 @@ p {
 }
 /* end public */
 
+.sticky-left {
+  position: absolute;
+  left:0;
+  top:0;
+}
+
 .swal-text {
-  line-height:30px;
+  line-height: 30px;
 }
 
 .modal {
-  padding-left:19px;
+  padding-left: 19px;
 }
 
-.card-img-top > div {
+.card-img-fix-height > div{
   height: 300px;
+}
+
+.card-moment {
+  bottom: 5%;
+  position: absolute;
+}
+
+.card-gatsby-init-pos .gatsby-image-wrapper {
+  position: initial !important;
 }
 
 .radius-0 {
@@ -280,17 +293,17 @@ section.contact {
 
 /* contact form */
 .contact-form .form-control {
-  background:#e8e8e8;
-  color:#40615c;
+  background: #e8e8e8;
+  color: #40615c;
 }
 
 .contact-form label {
-  color:#6f6f6f;
-  padding-left:2px;
+  color: #6f6f6f;
+  padding-left: 2px;
 }
 
 .contact-form .form-control::placeholder {
-  color:#b0b1b1;
+  color: #b0b1b1;
 }
 /* end contact form */
 

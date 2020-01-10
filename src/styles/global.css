@@ -31,6 +31,12 @@ p {
 }
 
 /* end public */
+.sticky-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .swal-text {
   line-height: 30px;
 }
@@ -39,8 +45,17 @@ p {
   padding-left: 19px;
 }
 
-.card-img-top > div {
+.card-img-fix-height > div {
   height: 300px;
+}
+
+.card-moment {
+  bottom: 5%;
+  position: absolute;
+}
+
+.card-gatsby-init-pos .gatsby-image-wrapper {
+  position: initial !important;
 }
 
 .radius-0 {
