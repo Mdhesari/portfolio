@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Title from "../Title"
 import ArticleRow from "./ArticleRow"
-import {FaArrowLeft} from "react-icons/fa"
+import { FaArrowLeft } from "react-icons/fa"
 
 const getArticles = graphql`
   query {
@@ -13,6 +13,11 @@ const getArticles = graphql`
           excerpt
           title
           slug
+          body {
+            childMarkdownRemark {
+              excerpt(format: HTML)
+            }
+          }
           thumbnailImage {
             fluid {
               ...GatsbyContentfulFluid
@@ -37,7 +42,9 @@ export default () => {
         <p className="mb-4 text-center text-secondary">
           Find out more about what I write
         </p>
-        <Link to="/" className="btn btn-link pl-4"><FaArrowLeft /> Back Home</Link>
+        <Link to="/" className="btn btn-link pl-4">
+          <FaArrowLeft /> Back Home
+        </Link>
         {articles.edges.map(({ node }) => (
           <ArticleRow className="mt-4" key={node.id} article={node} />
         ))}

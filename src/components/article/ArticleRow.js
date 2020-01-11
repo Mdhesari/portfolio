@@ -5,7 +5,7 @@ import GImage from "gatsby-image"
 import moment from "moment"
 
 export default ({ article, className }) => {
-  let { title, thumbnailImage, slug, excerpt, createdAt } = article
+  let { title, thumbnailImage, slug, excerpt, createdAt, body } = article
 
   slug = "/articles/" + slug
 
@@ -28,9 +28,21 @@ export default ({ article, className }) => {
         <div class="col-md-8">
           <div className="card-body">
             <h5 className="card-title text-center">{title}</h5>
-            <p className="card-text mb-4">{excerpt}</p>
+            <p
+              className="card-text mb-4"
+              dangerouslySetInnerHTML={
+                excerpt !== null
+                  ? { __html: body.childMarkdownRemark.excerpt }
+                  : { __html: excerpt }
+              }
+            >
+            </p>
             <p className="card-text">
-              <small class="text-muted card-moment d-none d-lg-block">{moment(createdAt).startOf('hours').fromNow()}</small>
+              <small class="text-muted card-moment d-none d-lg-block">
+                {moment(createdAt)
+                  .startOf("hours")
+                  .fromNow()}
+              </small>
             </p>
           </div>
         </div>
