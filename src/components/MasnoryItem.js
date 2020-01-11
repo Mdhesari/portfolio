@@ -20,7 +20,7 @@ export default ({ work }) => {
           {has_picture ? (
             ""
           ) : (
-            <ul className="list-group list-group-horizontal list-technologies text-dark">
+            <ul className="list-group list-group-horizontal list-technologies text-dark flex-flow-wrap">
               {technologies.map((item, index) => {
                 return (
                   <li key={index} className="list-group-item">

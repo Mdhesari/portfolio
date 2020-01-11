@@ -28,10 +28,147 @@ p {
   margin: 0;
   padding: 0;
 }
+
+address {
+  font-style: italic;
+  margin: 0 0 1.66667em;
+}
+
+mark,
+ins {
+  background: #fff493;
+  color: _palette(secondary);
+  padding: 0 3px;
+  text-decoration: none;
+}
+
+code {
+  background: _palette(bg);
+  border-radius: 3px;
+  color: _palette(secondary);
+  padding: 0 3px;
+}
+
+pre {
+  background: _palette(bg);
+  border-radius: 3px;
+  color: _palette(secondary);
+  font-size: 0.88889rem;
+  margin: 0 0 1.66667rem;
+  overflow: auto;
+  padding: 1.5em 1.875em;
+  position: relative;
+  white-space: pre;
+
+  > code {
+    padding: 0;
+  }
+}
+
+blockquote {
+
+  border-left: 5px solid $cyan;
+  color: _palette(secondary);
+  font-size: 1.33333rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 2.5rem auto;
+  max-width: 555px;
+  padding-left: 30px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 0.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  small,
+  cite {
+    color: _palette(meta);
+    display: block;
+    font-size: 0.66667em;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+    margin-top: 1em;
+    text-transform: uppercase;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 1.66667em;
+}
+
+ul,
+ol {
+  margin: 0 0 1.66667em;
+  padding: 0 0 0 1.66667em;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px dashed _palette(border);
+  margin: 1.66667em 0;
+}
+
+table {
+  font-size: 0.88889rem;
+  line-height: 1.5;
+  margin: 0 0 1.66667rem;
+  text-align: left;
+  width: 100%;
+}
+
+caption {
+  color: _palette(meta);
+  font-size: 0.875em;
+  font-style: normal;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+th,
+td {
+  border-bottom: 1px dashed _palette(border);
+  padding: 0.5em 5px;
+}
+
+th {
+  color: _palette(secondary);
+  font-weight: bold;
+}
+
 /* end public */
+
+.flex-flow-wrap {
+  flex-flow: wrap;
+}
 .list-technologies > li {
   border: 0;
-  margin: 0 5px;
+  margin: 5px;
   font-size: 13px;
   padding: 4px 8px;
   color: #999;

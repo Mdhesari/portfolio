@@ -29,7 +29,7 @@ $palette: (
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 // local
-@import "./imports/functions.scss";
+@import "./imports/functions";
 @import "./imports/general";
 @import "./imports/header";
 @import "./imports/content";
