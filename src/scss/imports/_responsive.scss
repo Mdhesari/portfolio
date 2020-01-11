@@ -1,0 +1,29 @@
+/* responsive breakpoints */
+@include media-breakpoint-down(sm) {
+  .caption {
+    width: 100%;
+  }
+  .masonry-items {
+    column-count: 1;
+  }
+
+  body.modal-open {
+    height: 100%;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .main-head-container {
+    background: none !important;
+  }
+
+  .masonry-items {
+    column-count: 2;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .main-head-container {
+    background-position-x: -70px !important;
+  }
+}

@@ -221,6 +221,105 @@ section.main-head .inner p {
 }
 
 /* end main head section */
+.post {
+  margin-bottom: 3.33333em;
+}
+
+.post-header {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+.post-title {
+  margin-bottom: 0.66667rem;
+}
+.post-title a {
+  border: 0;
+  color: inherit;
+}
+.post-title a:hover {
+  color: #044ff1;
+}
+
+.post-meta {
+  color: #a1a1a1;
+  font-size: 0.88889rem;
+  margin-top: 1em;
+}
+
+.post-meta > * {
+  margin: 0 0.5em;
+}
+
+.post-meta-icon {
+  vertical-align: -1px;
+  margin-right: 0.3em;
+}
+
+.post-thumbnail {
+  border: 0;
+  display: block;
+  margin-bottom: 2.5em;
+}
+.post-thumbnail img {
+  width: 100%;
+}
+
+.post-subtitle {
+  color: #212121;
+  font-size: 1.33333rem;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
+
+.read-more-link {
+  color: #212121;
+  display: inline-block;
+  font-size: 0.88889rem;
+  font-weight: bold;
+  padding: 0.3em 24px 0.3em 0;
+  position: relative;
+}
+.read-more-link .icon-arrow-right {
+  left: auto;
+  margin-left: 0;
+  margin-right: 2px;
+  right: 0;
+}
+
+.post-full:not(.page) .post-header {
+  text-align: center;
+}
+
+.post-feed .post {
+  border-bottom: 1px dashed #c7c7c7;
+  padding-bottom: 1.66667em;
+}
+.post-feed .post:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+.post-feed .post-header,
+.post-feed .post-thumbnail {
+  margin-bottom: 1.66667em;
+}
+.post-feed .post-title {
+  font-size: 1.66667rem;
+}
+.post-feed .post-meta {
+  font-size: 14px;
+}
+
+.post-content {
+  margin: 1em 0;
+}
+
+.post-thumbnail img,
+.post-content img,
+.block img {
+  border-radius: 3px;
+}
+
 /* about me section */
 section.about-me {
   margin-top: 5rem;
