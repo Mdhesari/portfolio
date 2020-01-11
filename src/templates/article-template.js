@@ -1,10 +1,15 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import Img from "gatsby-image"
 import moment from "moment"
-import { FaCalendar, FaBookReader } from "react-icons/fa"
+import {
+  FaCalendar,
+  FaBookReader,
+  FaArrowLeft,
+  FaArrowRight,
+} from "react-icons/fa"
 import readTime from "reading-time"
 
 export default ({ data }) => {
@@ -29,6 +34,14 @@ export default ({ data }) => {
                 <FaBookReader className="post-meta-icon" />
                 {reading_time.text}
               </span>
+            </div>
+            <div className="text-left mt-4">
+              <Link to="/" className="btn btn-link pl-4">
+                <FaArrowLeft /> Back Home
+              </Link>
+              <Link to="/articles" className="btn btn-link pl-4 float-right">
+                All Articles <FaArrowRight />
+              </Link>
             </div>
           </header>
           <Img fluid={article.thumbnailImage.fluid} />
