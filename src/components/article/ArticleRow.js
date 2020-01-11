@@ -25,7 +25,7 @@ export default ({ article, className }) => {
             ""
           )}
         </div>
-        <div class="col-md-8">
+        <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title text-center">{title}</h5>
             <p
@@ -38,7 +38,7 @@ export default ({ article, className }) => {
             >
             </p>
             <p className="card-text">
-              <small class="text-muted card-moment d-none d-lg-block">
+              <small className="text-muted card-moment d-none d-lg-block">
                 {moment(createdAt)
                   .startOf("hours")
                   .fromNow()}

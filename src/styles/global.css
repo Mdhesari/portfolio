@@ -157,6 +157,15 @@ th {
 }
 
 /* end public */
+.gallery-non-active {
+  width: 100px;
+  float: left;
+}
+
+.gallery-non-active:first-of-type {
+  margin-left: 2em;
+}
+
 .flex-flow-wrap {
   flex-flow: wrap;
 }
@@ -167,6 +176,11 @@ th {
   font-size: 13px;
   padding: 4px 8px;
   color: #999;
+}
+
+.list-technologies-single > li {
+  background: #17a2b8;
+  color: #f9f9f9;
 }
 
 .swal-text {
