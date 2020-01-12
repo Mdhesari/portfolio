@@ -542,6 +542,25 @@ section.contact .inner-contact h3 {
 }
 
 /* end contact form */
+/* carousel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #666;
+  border-radius: 50%;
+  background-size: 13px;
+}
+
+.carousel .gatsby-image-wrapper,
+.carousel .gatsby-image-wrapper > div,
+.carousel .gatsby-image-wrapper img {
+  max-height: 500px;
+}
+
+.carousel .gatsby-image-wrapper img {
+  object-position: 0 0 !important;
+}
+
+/* end carousel */
 /* footer */
 footer.main-footer {
   background-color: #f9f9fe;
