@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
           }
         }
+        totalCount
       }
       works: allContentfulWorks {
         edges {
@@ -43,5 +44,21 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     }
+  })
+
+  const postsPerPage = 1
+  const numPages = Math.ceil(data.articles.totalCount / postsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog/` : `/blog/${i + 1}`,
+      component: path.resolve("./src/templates/article-list-template.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages: numPages,
+        currentPage: i + 1,
+      },
+    })
   })
 }

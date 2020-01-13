@@ -30,7 +30,7 @@
 }
 
 .social-share > li > a {
-  display:inline-block;
+  display: inline-block;
   text-align: center;
   background: #efefef;
   padding: 10px;
@@ -49,22 +49,26 @@
   font-size: 24px;
 }
 
-.facebook {
+.facebook svg {
   color: #3b5998;
 }
 
-.twitter {
+.twitter,
+.twitter svg {
   color: #1da1f2;
 }
 
-.instagram {
+.instagram,
+.instagram svg {
   color: #c32aa3;
 }
 
-.linkedin {
+.linkedin,
+.linkedin svg {
   color: #007bb5;
 }
 
-.telegram {
+.telegram,
+.telegram svg {
   color: #0088cc;
 }

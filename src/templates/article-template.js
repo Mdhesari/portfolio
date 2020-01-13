@@ -4,15 +4,25 @@ import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import ArticleSingle from "../components/article/ArticleSingle"
 
-export default ({ data }) => {
-  let { article } = data
+export default class ArticleTemplate extends React.Component {
+  state = {
+    copied: false,
+  }
 
-  return (
-    <Layout>
-      <SEO title={article.title} />
-      <ArticleSingle article={article} />
-    </Layout>
-  )
+  onCopy = () => {
+    this.setState({ copied: true })
+  }
+
+  render() {
+    let { article } = this.props.data
+
+    return (
+      <Layout>
+        <SEO title={article.title} />
+        <ArticleSingle article={article} />
+      </Layout>
+    )
+  }
 }
 
 export const query = graphql`

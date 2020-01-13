@@ -1,37 +1,12 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import Title from "../Title"
 import ArticleRow from "./ArticleRow"
 import { FaArrowLeft } from "react-icons/fa"
+import Pagination from "../Pagination"
 
-const getArticles = graphql`
-  query {
-    articles: allContentfulArticles(sort: { fields: createdAt, order: DESC }) {
-      edges {
-        node {
-          id: contentful_id
-          excerpt
-          title
-          slug
-          body {
-            childMarkdownRemark {
-              excerpt(format: HTML)
-            }
-          }
-          thumbnailImage {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-          }
-          createdAt
-        }
-      }
-    }
-  }
-`
-
-export default () => {
-  const { articles } = useStaticQuery(getArticles)
+export default ({ articles, pageContext }) => {
+  const { currentPage, numPages } = pageContext
 
   return (
     <section className="articles my-4 py-4">
@@ -48,6 +23,15 @@ export default () => {
         {articles.edges.map(({ node }) => (
           <ArticleRow className="mt-4" key={node.id} article={node} />
         ))}
+        {numPages > 1 ? (
+          <Pagination
+            rootUrl="/blog"
+            currentPage={currentPage}
+            numPages={numPages}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </section>
   )
