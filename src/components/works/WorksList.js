@@ -1,35 +1,12 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import Title from "../Title"
 import { FaArrowLeft } from "react-icons/fa"
 import MasnoryItem from "../MasnoryItem"
+import Pagination from "../Pagination"
 
-const getWorks = graphql`
-  query {
-    works: allContentfulWorks(
-      sort: { fields: createdAt, order: DESC }
-    ) {
-      edges {
-        node {
-          pictures {
-            fluid {
-              src
-            }
-          }
-          description
-          id: contentful_id
-          slug
-          title
-          url
-          technologies
-        }
-      }
-    }
-  }
-`
-
-export default () => {
-  const { works } = useStaticQuery(getWorks)
+export default ({ works, pageContext }) => {
+  const { currentPage, numPages } = pageContext
 
   return (
     <section className="my-4 py-4">
@@ -48,6 +25,16 @@ export default () => {
             <MasnoryItem key={node.id} work={node} />
           ))}
         </div>
+
+        {numPages > 1 ? (
+          <Pagination
+            rootUrl="/works"
+            currentPage={currentPage}
+            numPages={numPages}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </section>
   )

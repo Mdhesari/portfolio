@@ -20,6 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
             url
           }
         }
+        totalCount
       }
     }
   `)
@@ -46,17 +47,37 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-  const postsPerPage = 1
-  const numPages = Math.ceil(data.articles.totalCount / postsPerPage)
+  const postsPerPage = 10
+
+  // articles page
+  let numPages = Math.ceil(data.articles.totalCount / postsPerPage)
+  const blogRoot = "/articles"
 
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/blog/` : `/blog/${i + 1}`,
+      path: i === 0 ? `${blogRoot}/` : `${blogRoot}/${i + 1}`,
       component: path.resolve("./src/templates/article-list-template.js"),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages: numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  // works page
+  let numWorksPages = Math.ceil(data.works.totalCount / postsPerPage)
+  const worksRoot = "/works"
+
+  Array.from({ length: numWorksPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `${worksRoot}/` : `${worksRoot}/${i + 1}`,
+      component: path.resolve("./src/templates/works-list-template.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages: numWorksPages,
         currentPage: i + 1,
       },
     })

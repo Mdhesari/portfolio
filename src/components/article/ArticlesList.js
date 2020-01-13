@@ -25,7 +25,7 @@ export default ({ articles, pageContext }) => {
         ))}
         {numPages > 1 ? (
           <Pagination
-            rootUrl="/blog"
+            rootUrl="/articles"
             currentPage={currentPage}
             numPages={numPages}
           />
