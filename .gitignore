@@ -70,3 +70,4 @@ yarn-error.log
 
 # new local files
 src/styles/global.css.map
+src/styles/bootstrap.css.map
