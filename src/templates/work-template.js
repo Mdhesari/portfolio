@@ -6,9 +6,12 @@ import Gallery from "../components/Gallery"
 import { FaArrowLeft, FaArrowRight, FaEye, FaGithub } from "react-icons/fa"
 import Container from "react-bootstrap/Container"
 import Linker from "../components/Linker"
+import SocialMediaShareList from "../components/SocialMediaShareList"
 
 export default ({ data }) => {
   let { works } = data
+
+  let work_url = document.location.href
 
   return (
     <Layout>
@@ -69,6 +72,10 @@ export default ({ data }) => {
                   >
                     Source <FaGithub />
                   </Linker>
+                  <div className="row mt-5">
+                  <h6>Share : </h6>
+                  <SocialMediaShareList url={work_url} text={works.title} />
+                  </div>
                 </div>
               </div>
             </div>

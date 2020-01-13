@@ -29,7 +29,8 @@
   font-size: 24px;
 }
 
-.social-share > li {
+.social-share > li > a {
+  display:inline-block;
   text-align: center;
   background: #efefef;
   padding: 10px;
