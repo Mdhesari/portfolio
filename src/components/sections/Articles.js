@@ -12,6 +12,7 @@ const getArticles = graphql`
       sort: { fields: createdAt, order: DESC }
       limit: 3
     ) {
+      totalCount
       edges {
         node {
           id: contentful_id
@@ -42,9 +43,13 @@ export default () => {
             <Article key={node.id} article={node} />
           ))}
         </CardGroup>
-        <MoreBtn url="/articles/">
-          Read More Articles <FaAngleDoubleRight />
-        </MoreBtn>
+        {articles.totalCount > 3 ? (
+          <MoreBtn url="/articles/">
+            Read More Articles <FaAngleDoubleRight />
+          </MoreBtn>
+        ) : (
+          ""
+        )}
       </div>
     </section>
   )

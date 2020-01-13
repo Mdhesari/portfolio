@@ -8,7 +8,6 @@ const getWorks = graphql`
   query {
     works: allContentfulWorks(
       sort: { fields: createdAt, order: DESC }
-      limit: 10
     ) {
       edges {
         node {

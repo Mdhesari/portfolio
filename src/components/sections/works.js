@@ -7,7 +7,11 @@ import MoreBtn from "../MoreBtn"
 
 const getWorks = graphql`
   query {
-    all: allContentfulWorks(sort: { fields: createdAt, order: DESC }) {
+    all: allContentfulWorks(
+      sort: { fields: createdAt, order: DESC }
+      limit: 8
+    ) {
+      totalCount
       edges {
         node {
           pictures {
@@ -31,7 +35,7 @@ export default () => {
   const works = useStaticQuery(getWorks)
 
   return (
-    <section className="latest-works mt-5">
+    <section className="latest-works mt-5 pb-5">
       <div className="container-md">
         <Title className="text-center pt-5">
           <Link to="/works/">Recent Works</Link>
@@ -41,9 +45,13 @@ export default () => {
             <MasnoryItem key={node.id} work={node} />
           ))}
         </div>
-        <MoreBtn url="/works/" className="pb-5">
-          See More Projects <FaAngleDoubleRight />
-        </MoreBtn>
+        {works.all.totalCount > 8 ? (
+          <MoreBtn url="/works/">
+            See More Projects <FaAngleDoubleRight />
+          </MoreBtn>
+        ) : (
+          ""
+        )}
       </div>
     </section>
   )
