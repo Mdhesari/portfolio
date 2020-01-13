@@ -1,18 +1,69 @@
-.social-icons {
+.social-icons,
+.social-share {
   list-style-type: none;
 }
 
-.social-icons > li {
+.social-share {
+  padding: 0;
+  position: relative;
+  bottom: 5px;
+}
 
+.social-icons > li,
+.social-share > li {
   display: inline-block;
-  margin:0 15px;
+  margin: 0 15px;
 }
 
 .social-icons > li a {
-    color:#666;
-    font-size: 24px;
+  color: #666;
+  font-size: 24px;
 }
 
 .social-icons > li a:hover {
-    color:rgb(30, 142, 194);
+  color: rgb(30, 142, 194);
+}
+
+.social-icons > li a {
+  color: #666;
+  font-size: 24px;
+}
+
+.social-share > li {
+  text-align: center;
+  background: #efefef;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.social-share > li svg {
+  font-size: 18px;
+  vertical-align: 6px;
+}
+
+.social-share > li a {
+  color: #333;
+  font-size: 24px;
+}
+
+.facebook {
+  color: #3b5998;
+}
+
+.twitter {
+  color: #1da1f2;
+}
+
+.instagram {
+  color: #c32aa3;
+}
+
+.linkedin {
+  color: #007bb5;
+}
+
+.telegram {
+  color: #0088cc;
 }

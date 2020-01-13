@@ -368,6 +368,18 @@ section.main-head .inner p {
   margin-bottom: 2.5em;
 }
 
+.post-footer:before {
+  content: "";
+  display: block;
+  border-top: 3px dotted #888;
+  margin-bottom: 1em;
+  width: 50%;
+  height: 3px;
+}
+.post-footer ul {
+  list-style-type: none;
+}
+
 .post-content img {
   width: 100%;
   max-width: 100%;
@@ -554,6 +566,58 @@ section.contact .inner-contact h3 {
 }
 
 /* end carousel */
+/* short links */
+.clip-board {
+  box-shadow: none !important;
+  padding: 0;
+  background: #efefef;
+  color: #666;
+  overflow:hidden;
+  white-space:nowrap;
+  max-width: 350px;
+}
+
+.link-box * {
+  outline: none;
+}
+
+.clip-board-icon {
+  display: inline-block;
+  padding: 10px;
+  background: #555;
+  color: #f1f2f3;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.short-links p {
+  margin-bottom: 4rem;
+}
+
+.short-links span {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 32px;
+  display: inline-block;
+  line-height: 32px;
+  padding: 0 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.short-links span:hover::before,
+.short-links span:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.short-links span:hover {
+  border-color: #927000;
+}
+
+/* end short links */
 /* footer */
 footer.main-footer {
   background-color: #f9f9fe;
