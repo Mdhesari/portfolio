@@ -31,7 +31,7 @@ export default ({ article, className }) => {
             <p
               className="card-text mb-4"
               dangerouslySetInnerHTML={
-                excerpt !== null
+                excerpt === null
                   ? { __html: body.childMarkdownRemark.excerpt }
                   : { __html: excerpt }
               }

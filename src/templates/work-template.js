@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import Gallery from "../components/Gallery"
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
+import Container from "react-bootstrap/Container"
 
 export default ({ data }) => {
 
@@ -12,7 +13,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={works.title} />
-      <div className="container">
+      <Container>
         <article className="post post-full">
           <header className="post-header">
             <h1 className="post-title">{works.title}</h1>
@@ -55,7 +56,7 @@ export default ({ data }) => {
             </div>
           </div>
         </article>
-      </div>
+      </Container>
     </Layout>
   )
 }
