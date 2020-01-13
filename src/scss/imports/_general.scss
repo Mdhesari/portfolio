@@ -300,14 +300,6 @@ th {
       }
     }
 
-    .item-wrapper:hover {
-      background-color: rgba(100, 100, 100, 0.8);
-      opacity: 1;
-
-      .item-inner {
-        transform: translateY(50%);
-      }
-    }
   }
 
   > .item-box {

@@ -27,3 +27,16 @@
     background-position-x: -70px !important;
   }
 }
+
+@include media-breakpoint-up(md) {
+  .masonry-items {
+    .item-wrapper:hover {
+      background-color: rgba(100, 100, 100, 0.8);
+      opacity: 1;
+
+      .item-inner {
+        transform: translateY(50%);
+      }
+    }
+  }
+}

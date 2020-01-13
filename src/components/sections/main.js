@@ -12,7 +12,7 @@ export default () => (
           <p>Web application developer & tech enthusiastic</p>
 
           <div className="actions mt-4">
-            <button data-target="#contact" data-toggle="modal" className="btn btn-success mr-1">Contact Me</button>
+            <button data-target="#contact" data-toggle="modal" className="btn btn-success raised mr-1">Contact Me</button>
           </div>
         </div>
       </div>

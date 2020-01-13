@@ -295,13 +295,6 @@ th {
 .masonry-items > .item .item-wrapper .item-inner {
   transform: translateY(70%);
 }
-.masonry-items > .item .item-wrapper:hover {
-  background-color: rgba(100, 100, 100, 0.8);
-  opacity: 1;
-}
-.masonry-items > .item .item-wrapper:hover .item-inner {
-  transform: translateY(50%);
-}
 .masonry-items > .item-box {
   background: #f1f2f3;
   border-radius: 4px;
@@ -593,6 +586,15 @@ footer.main-footer {
 @media (max-width: 1199.98px) {
   .main-head-container {
     background-position-x: -70px !important;
+  }
+}
+@media (min-width: 768px) {
+  .masonry-items .item-wrapper:hover {
+    background-color: rgba(100, 100, 100, 0.8);
+    opacity: 1;
+  }
+  .masonry-items .item-wrapper:hover .item-inner {
+    transform: translateY(50%);
   }
 }
 
