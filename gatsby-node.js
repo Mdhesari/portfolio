@@ -16,6 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             slug
+            url
           }
         }
       }
@@ -33,12 +34,14 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   data.works.edges.forEach(({ node }) => {
-    createPage({
-      path: `works/${node.slug}`,
-      component: path.resolve("./src/templates/work-template.js"),
-      context: {
-        slug: node.slug,
-      },
-    })
+    if (node.url === null) {
+      createPage({
+        path: `works/${node.slug}`,
+        component: path.resolve("./src/templates/work-template.js"),
+        context: {
+          slug: node.slug,
+        },
+      })
+    }
   })
 }
