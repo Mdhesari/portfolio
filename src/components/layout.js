@@ -1,26 +1,14 @@
-
 import React from "react"
 import PropTypes from "prop-types"
 import Header from "./Header"
-import SocialMedia from "./SocialMedia"
-import { FaCode, FaHeart } from "react-icons/fa"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
-
   return (
     <>
       <Header />
-      <div>
-        <main>{children}</main>
-        <footer className="main-footer pt-5">
-          <SocialMedia />
-          <div className="container">
-            <p className="text-center my-3">
-              © {new Date().getFullYear()}, <FaCode className="text-secondary" /> Built with <FaHeart className="text-danger" /> 
-            </p>
-          </div>
-        </footer>
-      </div>
+      <main>{children}</main>
+      <Footer />
     </>
   )
 }

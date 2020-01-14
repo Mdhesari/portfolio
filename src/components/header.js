@@ -3,7 +3,7 @@ import React from "react"
 import Navbar from "./Navbar"
 
 const Header = () => (
-  <header className="main-header bg-light">
+  <header id="page" className="main-header bg-light">
     <div className="container-md">
       <Navbar />
     </div>
