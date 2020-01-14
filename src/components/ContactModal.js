@@ -4,6 +4,10 @@ import "../css/contact.css"
 import { FaArrowLeft } from "react-icons/fa"
 import swal from "sweetalert"
 
+function doesInclude(obj, key) {
+  return obj.indexOf(key) !== -1
+}
+
 export default class ContactModal extends React.Component {
   constructor(props) {
     super(props)
@@ -31,16 +35,60 @@ export default class ContactModal extends React.Component {
     if (handler === null) {
       return
     }
+
     let isValid = true
     let feedback = ""
-
     let text = handler.value
-
     let name_prop = handler.getAttribute("name")
+    let initial_validation = handler.getAttribute("data-validation").split("|")
+    let validations = {}
 
-    if (text === "") {
-      isValid = false
-      feedback = "Don't leave this field empty."
+    for (let rule of initial_validation) {
+      if (doesInclude(rule, ":")) {
+        let splitted = rule.split(":")
+
+        if (splitted.length < 2) {
+          continue
+        }
+
+        validations[splitted[0]] = splitted[1]
+      } else {
+        validations[rule] = true
+      }
+    }
+
+    if ("required" in validations)
+      if (text === "") {
+        isValid = false
+        feedback = "Don't leave this field empty."
+      }
+
+    if ("min" in validations) {
+      if (text.length < validations["min"]) {
+        isValid = false
+        feedback =
+          "You should enter at least " + validations["min"] + " characters."
+      }
+    }
+
+    if ("max" in validations) {
+      if (text.length > validations["max"]) {
+        isValid = false
+        feedback =
+          "Characters are a lot, max chracter number is " +
+          validations["max"] +
+          "."
+      }
+    }
+
+    if ("email" in validations) {
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      let is_email_valid = re.test(String(text).toLowerCase())
+
+      if (!is_email_valid) {
+        isValid = false
+        feedback = "Email is invalid"
+      }
     }
 
     let new_state = {}
@@ -77,6 +125,7 @@ export default class ContactModal extends React.Component {
             <div className="form-group">
               <label htmlFor="fullname">Name</label>
               <input
+                onBlur={this.formValidate}
                 type="text"
                 className={`form-control ${this.validateAssign(
                   this.state.fullname
@@ -84,7 +133,7 @@ export default class ContactModal extends React.Component {
                 placeholder="John Smith"
                 name="fullname"
                 id="fullname"
-                onKeyUp={this.formValidate}
+                data-validation="required|min:3"
               />
               <div className="invalid-feedback mt-2 ml-2">
                 {this.state.fullname_feedback}
@@ -93,6 +142,7 @@ export default class ContactModal extends React.Component {
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
+                onBlur={this.formValidate}
                 type="text"
                 className={`form-control ${this.validateAssign(
                   this.state._replyto
@@ -100,7 +150,7 @@ export default class ContactModal extends React.Component {
                 placeholder="mdhesari99@gmail.com"
                 name="_replyto"
                 id="email"
-                onKeyUp={this.formValidate}
+                data-validation="required|email"
               />
               <div className="invalid-feedback mt-2 ml-2">
                 {this.state._replyto_feedback}
@@ -109,13 +159,14 @@ export default class ContactModal extends React.Component {
             <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea
-                onKeyUp={this.formValidate}
+                onBlur={this.formValidate}
                 id="message"
                 name="message"
                 placeholder="tell me what you need ,for ex : need technical consultant for our company"
                 className={`form-control ${this.validateAssign(
                   this.state.message
                 )}`}
+                data-validation="min:8"
                 rows="6"
               ></textarea>
               <div className="invalid-feedback mt-2 ml-2">
@@ -141,11 +192,17 @@ export default class ContactModal extends React.Component {
 
     let elements = document.querySelectorAll(".form-control")
 
+    let isValid = true
+
     for (let element of elements) {
-      let isValid = this.singleValidate(element)
-      if (!isValid) {
-        return 0
+      let isActionValid = this.singleValidate(element)
+      if (!isActionValid) {
+        isValid = false
       }
+    }
+
+    if (!isValid) {
+      return 0
     }
 
     // required info
