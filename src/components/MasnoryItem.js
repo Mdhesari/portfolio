@@ -8,12 +8,14 @@ export default ({ work }) => {
 
   let class_name = has_picture ? "item" : "item item-box"
 
-  let full_url = url === null ? "/works/" + slug : url
+  let isLocal = url === null
+
+  let full_url = isLocal ? "/works/" + slug : url
 
   return (
     <div className={class_name}>
       {has_picture ? <img src={pictures[0].fluid.src} alt={title} /> : ""}
-      <Linker url={full_url} className="item-wrapper" isLocal={url === null}>
+      <Linker url={full_url} className="item-wrapper" isLocal={isLocal}>
         <div className="item-inner">
           <h5>{title}</h5>
           <p>{description}</p>
