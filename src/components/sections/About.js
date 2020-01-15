@@ -57,12 +57,12 @@ export default () => {
             )}
 
             <Title>{title}</Title>
-            <p
+            <div
               className="mt-3 text-secondary caption mx-auto lead"
               dangerouslySetInnerHTML={{
                 __html: description.childMarkdownRemark.html,
               }}
-            ></p>
+            ></div>
             <a
               href={resume}
               target="_blank"
