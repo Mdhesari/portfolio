@@ -34,7 +34,7 @@ export default class Article extends React.Component {
 
     let article_url = ""
 
-    if(typeof document !== undefined) {
+    if(typeof document !== 'undefined') {
       article_url = document.location.href
     }
 

@@ -192,7 +192,7 @@ export default class ContactModal extends React.Component {
 
     let elements = []
 
-    if (typeof document !== undefined) {
+    if (typeof document !== 'undefined') {
       elements = document.querySelectorAll(".form-control")
     }
 
@@ -230,7 +230,7 @@ export default class ContactModal extends React.Component {
         swal(alertData.success.title, alertData.success.body, "success")
         form.reset()
 
-        if (typeof document !== undefined)
+        if (typeof document !== 'undefined')
           document.querySelector("#contact-close-btn").click()
 
         this.setState({

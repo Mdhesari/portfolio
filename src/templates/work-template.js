@@ -13,7 +13,7 @@ export default ({ data }) => {
 
   let work_url = ""
 
-  if (typeof document !== undefined) {
+  if (typeof document !== 'undefined') {
     work_url = document.location.href
   }
 
