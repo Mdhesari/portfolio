@@ -16,6 +16,10 @@ export default class Navbar extends React.Component {
     this.setState({ show: !this.state.show })
   }
 
+  toggleChangeMode() {
+    document.body.classList.toggle("dark-mode")
+  }
+
   render() {
     return (
       <nav className="navbar navbar-expand navbar-light bg-light p-0">
@@ -76,7 +80,7 @@ export default class Navbar extends React.Component {
               </Link>
             </li>
             <li className="list-group-item">
-              <button type="button" className="btn btn-default">
+              <button onClick={this.toggleChangeMode} type="button" className="btn btn-default">
                 <span><FaMoon /></span>
               </button>
             </li>
