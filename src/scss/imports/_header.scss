@@ -39,7 +39,7 @@ section.main-head {
 #contentNavbar {
   display: none !important;
   position: fixed;
-  bottom: 10%;
+  bottom: 4em;
   left: 1em;
 
   &.show {
@@ -100,10 +100,10 @@ section.main-head {
 }
 
 #main-navbar-toggler {
-  z-index: 999;
+  z-index: 899;
 }
 #contentNavbar {
-  z-index: 998;
+  z-index: 888;
 }
 
 .navbar-expand #main-navbar-toggler {

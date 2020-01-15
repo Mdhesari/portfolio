@@ -10,6 +10,24 @@
   body.modal-open {
     height: 100%;
   }
+
+  .navbar-expand .navbar-nav {
+    flex-direction: column;
+  }
+
+  #main-navbar-toggler {
+    bottom: 1em;
+    left: 1.2em;
+  }
+
+  #contentNavbar {
+    bottom: 3.5em;
+    left: 0.6em;
+  }
+
+  .modal {
+    padding-left: 0;
+}
 }
 
 @include media-breakpoint-down(md) {

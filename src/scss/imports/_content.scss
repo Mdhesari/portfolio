@@ -225,15 +225,17 @@ section.contact {
 /* clip board */
 
 .clip-board {
-
+  white-space: nowrap;
   box-shadow: none !important;
   padding:0;
   background:#efefef;
   color:#666;
+  overflow:hidden;
 }
 
 .link-box * {
   outline: none;
+  max-width:300px;
 }
 
 .clip-board-icon {
