@@ -50,7 +50,7 @@ export default () => {
             <MasnoryItem key={node.id} work={node} />
           ))}
         </div>
-        {works.allForCount.totalCount > 8 ? (
+        {works.allForCount.totalCount > works.all.totalCount ? (
           <MoreBtn url="/works/">
             See More Projects <FaAngleDoubleRight />
           </MoreBtn>
