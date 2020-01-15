@@ -32,7 +32,11 @@ export default class Article extends React.Component {
       ? "Url was copied!"
       : "Copy to clipboard!"
 
-    let article_url = document.location.href
+    let article_url = ""
+
+    if(typeof document !== undefined) {
+      article_url = document.location.href
+    }
 
     return (
       <Container>

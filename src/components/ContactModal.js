@@ -190,7 +190,11 @@ export default class ContactModal extends React.Component {
 
     const alertData = this.props.data.contact.alert
 
-    let elements = document.querySelectorAll(".form-control")
+    let elements = []
+
+    if (typeof document !== undefined) {
+      elements = document.querySelectorAll(".form-control")
+    }
 
     let isValid = true
 
@@ -225,7 +229,9 @@ export default class ContactModal extends React.Component {
         this.setState({ status: 1 })
         swal(alertData.success.title, alertData.success.body, "success")
         form.reset()
-        document.querySelector("#contact-close-btn").click()
+
+        if (typeof document !== undefined)
+          document.querySelector("#contact-close-btn").click()
 
         this.setState({
           status: null,

@@ -6,7 +6,8 @@ import { Link } from "gatsby"
 
 const goToTop = e => {
   e.preventDefault()
-  document.querySelector("#page").scrollIntoView({ behavior: "smooth" })
+  if (typeof document !== undefined)
+    document.querySelector("#page").scrollIntoView({ behavior: "smooth" })
 }
 
 export default () => (

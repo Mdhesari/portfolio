@@ -17,7 +17,8 @@ export default class Navbar extends React.Component {
   }
 
   toggleChangeMode() {
-    document.body.classList.toggle("dark-mode")
+    if (typeof document !== undefined)
+      document.body.classList.toggle("dark-mode")
   }
 
   render() {

@@ -11,7 +11,11 @@ import SocialMediaShareList from "../components/SocialMediaShareList"
 export default ({ data }) => {
   let { works } = data
 
-  let work_url = document.location.href
+  let work_url = ""
+
+  if (typeof document !== undefined) {
+    work_url = document.location.href
+  }
 
   return (
     <Layout>
