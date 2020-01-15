@@ -150,7 +150,7 @@ export default class ContactModal extends React.Component {
                 placeholder="mdhesari99@gmail.com"
                 name="_replyto"
                 id="email"
-                data-validation="required|email"
+                data-validation="required|email|max:255"
               />
               <div className="invalid-feedback mt-2 ml-2">
                 {this.state._replyto_feedback}
