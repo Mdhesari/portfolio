@@ -29,14 +29,16 @@ const getArticles = graphql`
   }
 `
 
-export default () => {
+export default ({ title }) => {
   const { articles } = useStaticQuery(getArticles)
 
   return (
     <section className="articles my-4 py-4">
       <div className="container-lg">
         <Title className="text-center">
-          <Link to="/articles/">Latest Articles</Link>
+          <Link to="/articles/">
+            {title !== null ? title : "Latest Articles"}
+          </Link>
         </Title>
         <CardGroup>
           {articles.edges.map(({ node }) => (

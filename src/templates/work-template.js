@@ -58,23 +58,32 @@ export default ({ data }) => {
                   ""
                 )}
                 <div className="links mt-4">
-                  <Linker
-                    isLocal={false}
-                    url="#"
-                    className="btn btn-primary btn-sm py-1 px-3 btn-rounded"
-                  >
-                    Visit <FaEye />
-                  </Linker>
-                  <Linker
-                  isLocal={false}
-                  url="#"
-                  className="btn btn-secondary btn-sm py-1 px-3 btn-rounded float-right"
-                  >
-                    Source <FaGithub />
-                  </Linker>
+                  {works.liveUrl !== null ? (
+                    <Linker
+                      isLocal={false}
+                      url={works.liveUrl}
+                      className="btn btn-primary btn-sm py-1 px-3 btn-rounded"
+                    >
+                      Visit <FaEye />
+                    </Linker>
+                  ) : (
+                    ""
+                  )}
+
+                  {works.repositoryUrl !== null ? (
+                    <Linker
+                      isLocal={false}
+                      url={works.repositoryUrl}
+                      className="btn btn-secondary btn-sm py-1 px-3 btn-rounded float-right"
+                    >
+                      Source <FaGithub />
+                    </Linker>
+                  ) : (
+                    ""
+                  )}
                   <div className="row mt-5">
-                  <h6>Share : </h6>
-                  <SocialMediaShareList url={work_url} text={works.title} />
+                    <h6>Share : </h6>
+                    <SocialMediaShareList url={work_url} text={works.title} />
                   </div>
                 </div>
               </div>
@@ -104,6 +113,8 @@ export const query = graphql`
         }
       }
       technologies
+      repositoryUrl
+      liveUrl
     }
   }
 `

@@ -10,6 +10,7 @@ const getWorks = graphql`
     all: allContentfulWorks(
       sort: { fields: createdAt, order: DESC }
       limit: 8
+      filter: { featured: { eq: true } }
     ) {
       totalCount
       edges {
@@ -25,6 +26,7 @@ const getWorks = graphql`
           title
           url
           technologies
+          featured
         }
       }
     }
