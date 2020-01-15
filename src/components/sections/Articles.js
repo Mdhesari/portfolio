@@ -32,12 +32,13 @@ const getArticles = graphql`
 export default ({ title }) => {
   const { articles } = useStaticQuery(getArticles)
 
+  let the_title = title !== null ? title:""
   return (
     <section className="articles my-4 py-4">
       <div className="container-lg">
         <Title className="text-center">
           <Link to="/articles/">
-            {title !== null ? title : "Latest Articles"}
+            {the_title !== "" ?the_title : "Latest Articles"}
           </Link>
         </Title>
         <CardGroup>
