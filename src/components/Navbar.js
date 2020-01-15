@@ -79,11 +79,11 @@ export default class Navbar extends React.Component {
                 <FaPaintBrush />
               </Link>
             </li>
-            <li className="list-group-item">
-              <button onClick={this.toggleChangeMode} type="button" className="btn btn-default">
+            {/* <li className="list-group-item">
+              <button onClick={this.toggleChangeMode} type="button" className="btn btn-default dark-toggler">
                 <span><FaMoon /></span>
               </button>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>

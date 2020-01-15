@@ -448,6 +448,7 @@ section.main-head .inner p {
 #contentNavbar .list-group .list-group-item a,
 #contentNavbar .list-group .list-group-item button {
   display: inline-block;
+  box-shadow: none;
   padding: 10px;
   background-color: #f0f1f2;
   border-radius: 50%;
@@ -478,6 +479,7 @@ section.main-head .inner p {
   border-radius: 50%;
   position: absolute;
   background: #8f8e8c;
+  color: #f0f0f0;
   left: -10px;
   bottom: -10px;
 }
@@ -729,6 +731,22 @@ footer.main-footer {
 }
 
 /* end footer */
+body.dark-mode section.main-head {
+  background: #333335;
+}
+body.dark-mode #contentNavbar .list-group .list-group-item button {
+  background-color: #333;
+  color: #007bff;
+}
+body.dark-mode .dark-toggler {
+  background-color: #333335;
+  color: #f1f2f3;
+}
+body.dark-mode #main-navbar-toggler {
+  background: #f0f0f0;
+  color: #555;
+}
+
 /* responsive breakpoints */
 @media (max-width: 767.98px) {
   .caption {

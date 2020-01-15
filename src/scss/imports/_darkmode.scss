@@ -1,0 +1,24 @@
+body.dark-mode {
+  section.main-head {
+    background: #333335;
+  }
+
+  #contentNavbar {
+    .list-group .list-group-item {
+      button {
+        background-color: #333;
+        color: $blue;
+      }
+    }
+  }
+
+  .dark-toggler {
+    background-color: #333335;
+    color: #f1f2f3;
+  }
+
+  #main-navbar-toggler {
+    background: #f0f0f0;
+    color: #555;
+  }
+}

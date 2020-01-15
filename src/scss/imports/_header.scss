@@ -61,6 +61,7 @@ section.main-head {
     a,
     button {
       display: inline-block;
+      box-shadow: none;
       padding: 10px;
       background-color: #f0f1f2;
       border-radius: 50%;
@@ -93,6 +94,7 @@ section.main-head {
   border-radius: 50%;
   position: absolute;
   background: #8f8e8c;
+  color:#f0f0f0;   
   left: -10px;
   bottom: -10px;
 }
