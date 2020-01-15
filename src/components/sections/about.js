@@ -67,7 +67,7 @@ export default () => {
               href={resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline-primary btn-sm btn-rounded py-2 px-3 raised mr-1 mt-3"
+              className="btn btn-outline-primary btn-sm btn-rounded py-2 px-3 mr-1 mt-3"
             >
               {buttonText}
             </a>

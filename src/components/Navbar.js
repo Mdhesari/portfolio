@@ -1,7 +1,7 @@
 import React from "react"
 import { IoIosCall, IoIosMail } from "react-icons/io"
 import { Link } from "gatsby"
-import { FaToggleOn, FaBlog, FaRProject, FaHome, FaProjectDiagram, FaPaintBrush, FaMoon } from "react-icons/fa"
+import menus from "../constants/mainNavMenus"
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -64,21 +64,20 @@ export default class Navbar extends React.Component {
           id="contentNavbar"
         >
           <ul className="list-group">
-            <li className="list-group-item">
-              <Link to="/">
-                <FaHome />
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link to="/articles">
-                <FaBlog />
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link to="/works">
-                <FaPaintBrush />
-              </Link>
-            </li>
+            {menus.map((item, index) => (
+              <li key={`nav-list-${index}`} className="list-group-item">
+                <Link
+                  key={`nav-list-link-${index}`}
+                  to={item.url}
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title={item.tooltip !== undefined ? item.tooltip : ""}
+                >
+                  {item.text}
+                </Link>
+              </li>
+            ))}
+
             {/* <li className="list-group-item">
               <button onClick={this.toggleChangeMode} type="button" className="btn btn-default dark-toggler">
                 <span><FaMoon /></span>
