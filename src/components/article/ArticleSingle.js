@@ -34,7 +34,7 @@ export default class Article extends React.Component {
 
     let article_url = ""
 
-    if(typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       article_url = document.location.href
     }
 
@@ -65,7 +65,12 @@ export default class Article extends React.Component {
               </Link>
             </div>
           </header>
-          <Img fluid={article.thumbnailImage.fluid} />
+          {article.thumbnailImage !== null ? (
+            <Img fluid={article.thumbnailImage.fluid} />
+          ) : (
+            ""
+          )}
+
           <div
             className="post-content"
             dangerouslySetInnerHTML={{
