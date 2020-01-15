@@ -1,0 +1,40 @@
+/* in the name of allah */
+$blue-primary: #044ff1;
+$profile-pic-size: 200px;
+$custom-gray: #f9f9fe;
+$blog-card-border-radius: 8px;
+
+$palette: (
+  primary:       #044ff1,
+  secondary:     darken(#666666, 27%),
+  meta:          lighten(#666666, 23%),
+  border:        lighten(#666666, 38%),
+  bg:            lighten(#666666, 55%),
+  accent:        #ffd300,
+  accent-blue:   #1fa2ff,
+  accent-green:  #24b466,
+  accent-red:    #f45a4e
+);
+
+@mixin animation-ease-out {
+  -moz-transition: all 300ms ease-out;
+  -webkit-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+// bootstrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+// local
+@import "./imports/functions";
+@import "./imports/animations";
+@import "./imports/general";
+@import "./imports/icons";
+@import "./imports/header";
+@import "./imports/content";
+@import "./imports/footer";
+@import "./imports/darkmode";
+@import "./imports/responsive";

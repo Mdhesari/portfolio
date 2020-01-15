@@ -1,0 +1,60 @@
+/* responsive breakpoints */
+@include media-breakpoint-down(sm) {
+  .caption {
+    width: 100%;
+  }
+  .masonry-items {
+    column-count: 1;
+  }
+
+  body.modal-open {
+    height: 100%;
+  }
+
+  .navbar-expand .navbar-nav {
+    flex-direction: column;
+  }
+
+  #main-navbar-toggler {
+    bottom: 1em;
+    left: 1.2em;
+  }
+
+  #contentNavbar {
+    bottom: 3.5em;
+    left: 0.6em;
+  }
+
+  .modal {
+    padding-left: 0;
+}
+}
+
+@include media-breakpoint-down(md) {
+  .main-head-container {
+    background: none !important;
+  }
+
+  .masonry-items {
+    column-count: 2;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .main-head-container {
+    background-position-x: -70px !important;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .masonry-items {
+    .item-wrapper:hover {
+      background-color: rgba(100, 100, 100, 0.8);
+      opacity: 1;
+
+      .item-inner {
+        transform: translateY(50%);
+      }
+    }
+  }
+}
