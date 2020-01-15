@@ -14,9 +14,9 @@ export default () => (
   <footer className="main-footer pt-5">
     <SocialMedia />
     <div className="container">
-      <p className="text-center my-3">
+      <p className="text-center py-3">
         <span>
-          <FaCode className="text-secondary" /> Built with{" "}
+          <FaCode className="text-secondary" /> Built with
           <FaHeart className="text-danger" /> © {new Date().getFullYear()}
         </span>
         <span className="pl-2 d-inline-block">

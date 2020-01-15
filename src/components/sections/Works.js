@@ -7,6 +7,9 @@ import MoreBtn from "../MoreBtn"
 
 const getWorks = graphql`
   query {
+    allForCount: allContentfulWorks {
+      totalCount
+    }
     all: allContentfulWorks(
       sort: { fields: createdAt, order: DESC }
       limit: 8
@@ -47,7 +50,7 @@ export default () => {
             <MasnoryItem key={node.id} work={node} />
           ))}
         </div>
-        {works.all.totalCount > 8 ? (
+        {works.allForCount.totalCount > 8 ? (
           <MoreBtn url="/works/">
             See More Projects <FaAngleDoubleRight />
           </MoreBtn>
