@@ -35,3 +35,75 @@ section.main-head {
   }
 }
 /* end main head section */
+
+#contentNavbar {
+  display: none !important;
+  position: fixed;
+  bottom: 10%;
+  left: 1em;
+
+  &.show {
+    display: flex !important;
+
+    .list-group .list-group-item {
+      animation: animate-menus 200ms forwards linear;
+    }
+    
+  }
+
+  .list-group .list-group-item {
+    transition: all 500ms;
+    bottom:-200px;
+    background: none;
+    border: none;
+    padding: 0;
+
+    a,
+    button {
+      display: inline-block;
+      padding: 10px;
+      background-color: #f0f1f2;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      color: $blue;
+      text-align: center;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 21px;
+    }
+  }
+}
+
+#main-navbar-toggler {
+  border: none;
+  position: fixed;
+  bottom: 1.5em;
+  left: 1.5em;
+  outline: none;
+  width: 30px;
+  height: 30px;
+}
+
+#main-navbar-toggler::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  background: #8f8e8c;
+  left: -10px;
+  bottom: -10px;
+}
+
+#main-navbar-toggler {
+  z-index: 999;
+}
+#contentNavbar {
+  z-index: 998;
+}
+
+.navbar-expand #main-navbar-toggler {
+  display: block;
+}

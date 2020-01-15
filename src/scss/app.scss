@@ -30,7 +30,9 @@ $palette: (
 @import "../../node_modules/bootstrap/scss/mixins";
 // local
 @import "./imports/functions";
+@import "./imports/animations";
 @import "./imports/general";
+@import "./imports/icons";
 @import "./imports/header";
 @import "./imports/content";
 @import "./imports/footer";
