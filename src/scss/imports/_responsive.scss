@@ -31,6 +31,27 @@
 }
 
 @include media-breakpoint-down(md) {
+  .masonry-grid {
+
+    .list-group .list-group-item {
+      font-size:12px;
+
+    }
+
+    .item {
+      .item-wrapper {
+
+        h5 {
+          font-size:1.18em;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
   .main-head-container {
     background: none !important;
   }
@@ -53,7 +74,7 @@
       opacity: 1;
 
       .item-inner {
-        transform: translateY(50%);
+        transform: translateY(20%);
       }
     }
   }

@@ -11,7 +11,6 @@ import {
 import readTime from "reading-time"
 import SocialMediaShareList from "../SocialMediaShareList"
 import { CopyToClipboard } from "react-copy-to-clipboard"
-import Container from "react-bootstrap/Container"
 import { Link } from "gatsby"
 
 export default class Article extends React.Component {
@@ -39,7 +38,7 @@ export default class Article extends React.Component {
     }
 
     return (
-      <Container>
+      <div className="container-lg">
         <article className="post post-full">
           <header className="post-header">
             <h1 className="post-title">{article.title}</h1>
@@ -103,7 +102,7 @@ export default class Article extends React.Component {
             </div>
           </footer>
         </article>
-      </Container>
+      </div>
     )
   }
 }

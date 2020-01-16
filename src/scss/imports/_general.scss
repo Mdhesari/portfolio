@@ -66,7 +66,10 @@ pre {
 }
 
 blockquote {
-  border-left: 5px solid $cyan;
+  border-left: 8px solid $cyan;
+  background-color: #f7f8f9;
+  min-height: 78px;
+  padding-top: 17px;
   color: _palette(secondary);
   font-size: 1.33333rem;
   font-style: italic;
@@ -254,7 +257,7 @@ th {
 
 .text-primary-title,
 .text-primary-title a {
-  color: $blue-primary;
+  color: $blue;
   font-size: 38px;
 }
 
@@ -306,6 +309,10 @@ th {
       background-color: rgba(100, 100, 100, 0);
       color: #f7f8f9;
       opacity: 0;
+
+      p {
+        font-size: 16px;
+      }
 
       .item-inner {
         transform: translateY(70%);
