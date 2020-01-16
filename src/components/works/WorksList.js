@@ -25,11 +25,9 @@ export default ({ works, pageContext }) => {
         <Masonry
           breakpointCols={{
             default: 3,
-            1100: 3,
             700: 2,
-            500: 1,
           }}
-          className="masonry-grid"
+          className="masonry-grid mt-4"
           columnClassName="masonry-grid_column"
         >
           {works.edges.map(({ node }) => (
