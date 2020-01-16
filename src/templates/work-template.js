@@ -13,9 +13,11 @@ export default ({ data }) => {
 
   let work_url = ""
 
-  if (typeof document !== 'undefined') {
+  if (typeof document !== "undefined") {
     work_url = document.location.href
   }
+
+  let has_pictures = works.pictures !== null
 
   return (
     <Layout>
@@ -35,10 +37,16 @@ export default ({ data }) => {
             </div>
           </header>
           <div className="row">
-            <div className="col-12 col-md-6">
-              <Gallery pictures={works.pictures} description={works.title} />
-            </div>
-            <div className="col-12 col-md-6 post-content">
+            {has_pictures ? (
+              <div className="col-12 col-md-6">
+                <Gallery pictures={works.pictures} description={works.title} />
+              </div>
+            ) : (
+              ""
+            )}
+            <div
+              className={`col-12 ${has_picture ? "col-md-6" : ""} post-content`}
+            >
               <p
                 dangerouslySetInnerHTML={{
                   __html: works.text.childMarkdownRemark.html,
