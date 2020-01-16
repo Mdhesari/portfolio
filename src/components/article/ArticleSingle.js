@@ -78,7 +78,7 @@ export default class Article extends React.Component {
             }}
           ></div>
           <footer className="post-footer">
-            <div className="row share-on-social-media ml-0 mt-4">
+            <div className="row share-on-social-media ml-0 mt-4 pl-1">
               <h6>Share : </h6>
               <SocialMediaShareList url={article_url} text={article.title} />
             </div>

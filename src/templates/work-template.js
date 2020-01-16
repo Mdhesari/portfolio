@@ -85,7 +85,7 @@ export default ({ data }) => {
                   ) : (
                     ""
                   )}
-                  <div className="row mt-5">
+                  <div className="row mt-5 pl-1">
                     <h6>Share : </h6>
                     <SocialMediaShareList url={work_url} text={works.title} />
                   </div>
