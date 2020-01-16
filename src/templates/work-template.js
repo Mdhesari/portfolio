@@ -26,10 +26,10 @@ export default ({ data }) => {
             <h1 className="post-title">{works.title}</h1>
             <h2 className="post-subtitle text-muted">{works.description}</h2>
             <div className="text-left mt-4">
-              <Link to="/" className="btn btn-link pl-4">
+              <Link to="/" className="btn btn-link">
                 <FaArrowLeft /> Back Home
               </Link>
-              <Link to="/works" className="btn btn-link pl-4 float-right">
+              <Link to="/works" className="btn btn-link float-right">
                 All Works <FaArrowRight />
               </Link>
             </div>
