@@ -1,9 +1,10 @@
 import React from "react"
-import MasnoryItem from "../MasnoryItem"
+import WorkGrid from "../works/WorkGrid"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Title from "../Title"
 import { FaAngleDoubleRight } from "react-icons/fa"
 import MoreBtn from "../MoreBtn"
+import Masonry from "react-masonry-css"
 
 const getWorks = graphql`
   query {
@@ -45,11 +46,21 @@ export default () => {
         <Title className="text-center pt-5">
           <Link to="/works/">Recent Works</Link>
         </Title>
-        <div className="masonry-items">
+
+        <Masonry
+          breakpointCols={{
+            default: 4,
+            1100: 3,
+            700: 2,
+            500: 1,
+          }}
+          className="masonry-grid"
+          columnClassName="masonry-grid_column"
+        >
           {works.all.edges.map(({ node }) => (
-            <MasnoryItem key={node.id} work={node} />
+            <WorkGrid key={node.id} work={node} />
           ))}
-        </div>
+        </Masonry>
         {works.allForCount.totalCount > works.all.totalCount ? (
           <MoreBtn url="/works/">
             See More Projects <FaAngleDoubleRight />

@@ -27,7 +27,7 @@
 
   .modal {
     padding-left: 0;
-}
+  }
 }
 
 @include media-breakpoint-down(md) {
@@ -47,7 +47,7 @@
 }
 
 @include media-breakpoint-up(md) {
-  .masonry-items {
+  .masonry-grid {
     .item-wrapper:hover {
       background-color: rgba(100, 100, 100, 0.8);
       opacity: 1;

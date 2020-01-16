@@ -274,8 +274,17 @@ th {
 /* masonry items */
 .masonry-items {
   column-count: 3;
+}
 
-  > .item {
+/* end masonry items */
+.masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+
+  .item {
     position: relative;
     width: 100%;
     margin-bottom: 1rem;
@@ -304,7 +313,7 @@ th {
     }
   }
 
-  > .item-box {
+  .item-box {
     .item-wrapper {
       position: relative;
       opacity: 1;
@@ -335,12 +344,14 @@ th {
     padding: 10px;
   }
 
-  > .item-box .item-wrapper:hover {
+  .item-box .item-wrapper:hover {
     .item-title,
     h5 {
       color: $blue-primary;
     }
   }
 }
-
-/* end masonry items */
+.masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}

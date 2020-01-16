@@ -1,5 +1,5 @@
 import React from "react"
-import Linker from "./Linker"
+import Linker from "../Linker"
 
 export default ({ work }) => {
   const { pictures, title, description, slug, url, technologies } = work

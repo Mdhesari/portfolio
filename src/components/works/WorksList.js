@@ -2,8 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import Title from "../Title"
 import { FaArrowLeft } from "react-icons/fa"
-import MasnoryItem from "../MasnoryItem"
+import WorkGrid from "./WorkGrid"
 import Pagination from "../Pagination"
+import Masonry from "react-masonry-css"
 
 export default ({ works, pageContext }) => {
   const { currentPage, numPages } = pageContext
@@ -20,11 +21,21 @@ export default ({ works, pageContext }) => {
         <Link to="/" className="btn btn-link pl-4">
           <FaArrowLeft /> Back Home
         </Link>
-        <div className="masonry-items pt-3 pb-5">
+
+        <Masonry
+          breakpointCols={{
+            default: 3,
+            1100: 3,
+            700: 2,
+            500: 1,
+          }}
+          className="masonry-grid"
+          columnClassName="masonry-grid_column"
+        >
           {works.edges.map(({ node }) => (
-            <MasnoryItem key={node.id} work={node} />
+            <WorkGrid key={node.id} work={node} />
           ))}
-        </div>
+        </Masonry>
 
         {numPages > 1 ? (
           <Pagination
