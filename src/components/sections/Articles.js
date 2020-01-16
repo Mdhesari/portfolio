@@ -34,8 +34,6 @@ export default ({ title }) => {
 
   let the_title = title !== undefined ? title : ""
 
-  console.log(the_title)
-
   return (
     <section className="articles my-4 py-4">
       <div className="container-lg">

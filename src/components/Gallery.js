@@ -2,23 +2,7 @@ import React from "react"
 import Linker from "./Linker"
 import Image from "gatsby-image"
 import Carousel from "react-bootstrap/Carousel"
-/* 
 
-{pictures.map((item, index) => (
-          <Linker
-            key={index * 99}
-            isAllowed={index === 0}
-            isLocal={false}
-            url={item.fluid.src}
-          >
-            <Image
-              key={index * 98}
-              className={index === 0 ? "gallery-active" : "gallery-non-active"}
-              fluid={item.fluid}
-            />
-          </Linker>
-        ))}
-*/
 class Gallery extends React.Component {
   constructor(props) {
     super(props)
@@ -57,7 +41,6 @@ class Gallery extends React.Component {
 
   changePicture(ev) {
     ev.preventDefault()
-    console.log(ev)
   }
 }
 
