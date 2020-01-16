@@ -25,12 +25,20 @@ export default class ContactModal extends React.Component {
     }
   }
 
+  /**
+   * validate event is triggered whenever form is submitted
+   * @param {event} e 
+   */
   formValidate(e) {
     const handler = e.target
 
     this.singleValidate(handler)
   }
 
+  /**
+   * pass dom element and validate its *value*
+   * @param {object|document} handler 
+   */
   singleValidate(handler) {
     if (handler === null) {
       return
