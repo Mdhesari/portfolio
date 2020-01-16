@@ -2,9 +2,14 @@ import React from "react"
 import { Link } from "gatsby"
 
 export default ({ url, isLocal, children, className, isAllowed }) => {
-  if (isAllowed !== undefined && isAllowed === false) {
+  if (isAllowed !== "undefined" && isAllowed === false) {
     return <>{children}</>
   }
+
+  if (isLocal === "undefined") {
+    isLocal = false
+  }
+
   return (
     <>
       {isLocal === true ? (

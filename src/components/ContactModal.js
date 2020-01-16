@@ -100,6 +100,7 @@ export default class ContactModal extends React.Component {
     return isValid
   }
 
+  /* set class for validation */
   validateAssign(key) {
     return key !== null ? (key ? "is-valid" : "is-invalid") : ""
   }
