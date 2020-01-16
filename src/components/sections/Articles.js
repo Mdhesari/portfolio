@@ -1,10 +1,10 @@
 import React from "react"
-import CardGroup from "../CardGroup"
 import Article from "../article/Article"
 import Title from "../Title"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { FaAngleDoubleRight } from "react-icons/fa"
 import MoreBtn from "../MoreBtn"
+import CardGroup from "react-bootstrap/CardGroup"
 
 const getArticles = graphql`
   query {
