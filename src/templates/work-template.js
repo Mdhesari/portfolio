@@ -45,7 +45,7 @@ export default ({ data }) => {
               ""
             )}
             <div
-              className={`col-12 ${has_picture ? "col-md-6" : ""} post-content`}
+              className={`col-12 ${has_pictures ? "col-md-6" : ""} post-content`}
             >
               <p
                 dangerouslySetInnerHTML={{
