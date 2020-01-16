@@ -42,17 +42,15 @@ export default () => {
 
   return (
     <section className="latest-works mt-5 pb-5">
-      <div className="container-md">
+      <div className="container-lg">
         <Title className="text-center pt-5">
           <Link to="/works/">Recent Works</Link>
         </Title>
 
         <Masonry
           breakpointCols={{
-            default: 4,
-            1100: 3,
+            default: 3,
             700: 2,
-            500: 1,
           }}
           className="masonry-grid"
           columnClassName="masonry-grid_column"
