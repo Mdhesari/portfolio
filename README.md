@@ -4,7 +4,10 @@ I decided to improve my CV and my personal website in order to challenge myself 
 
 the website is running on (amazing netlify ❤️)[https://netlify.com]
 
-Also the content is served on (great contentful ❤️)[https://contentful.com]
+Also the content is handled on (great contentful ❤️)[https://contentful.com]
+
+## Live
+(Check the website here)[https://mdhesari.netlify.com]
 
 ## Run on local
 
