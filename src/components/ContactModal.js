@@ -176,7 +176,7 @@ export default class ContactModal extends React.Component {
           </div>
           <input
             type="submit"
-            className="btn btn-success btn-full py-3 w-100 border-0 radius-0 form-validate"
+            className="btn btn-success shadow-none btn-full py-3 w-100 border-0 radius-0 form-validate"
             value="Send"
           />
         </form>
