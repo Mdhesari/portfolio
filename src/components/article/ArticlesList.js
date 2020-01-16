@@ -17,7 +17,7 @@ export default ({ articles, pageContext }) => {
         <p className="mb-4 text-center text-secondary">
           Find out more about what I write
         </p>
-        <Link to="/" className="btn btn-link pl-4">
+        <Link to="/" className="btn btn-link">
           <FaArrowLeft /> Back Home
         </Link>
         {articles.edges.map(({ node }) => (

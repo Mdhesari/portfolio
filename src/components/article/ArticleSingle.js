@@ -57,10 +57,10 @@ export default class Article extends React.Component {
               </span>
             </div>
             <div className="text-left mt-4">
-              <Link to="/" className="btn btn-link pl-4">
+              <Link to="/" className="btn btn-link">
                 <FaArrowLeft /> Back Home
               </Link>
-              <Link to="/articles" className="btn btn-link pl-4 float-right">
+              <Link to="/articles" className="btn btn-link float-right">
                 All Articles <FaArrowRight />
               </Link>
             </div>
