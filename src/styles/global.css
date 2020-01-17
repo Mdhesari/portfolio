@@ -665,7 +665,7 @@ section.main-head .inner p {
 
 /* about me section */
 section.about-me {
-  margin-top: 5rem;
+  padding-top: 5rem;
 }
 section.about-me .inner-picture {
   max-width: 100%;
@@ -761,16 +761,100 @@ footer.main-footer {
 }
 
 /* end footer */
+body.dark-mode {
+  background-color: #151515;
+}
+body.dark-mode section.latest-works {
+  background-color: transparent;
+}
+body.dark-mode .clip-board.btn.btn-default {
+  border: none;
+}
+body.dark-mode .post h1,
+body.dark-mode .post h2,
+body.dark-mode .post h3,
+body.dark-mode .post h4,
+body.dark-mode .post h5,
+body.dark-mode .post h6 {
+  color: #f3f3f3;
+}
+body.dark-mode .post .post-content {
+  color: #afafaf;
+}
+body.dark-mode section.articles .card {
+  background-color: #1e1f21;
+  box-shadow: none;
+}
+body.dark-mode section.articles .card .card-title {
+  color: #aaa;
+  transition: all 350ms linear;
+}
+body.dark-mode section.articles .card .card-title:hover {
+  color: #fff;
+}
+body.dark-mode .text-primary-title,
+body.dark-mode .text-primary-title a {
+  color: #6dc3ff;
+}
+body.dark-mode footer.main-footer {
+  background-color: #0f1f2c;
+  color: #aaa;
+}
+body.dark-mode footer.main-footer ul li a {
+  color: #aaa;
+}
+body.dark-mode footer.main-footer ul li a:hover {
+  color: #fff;
+}
+body.dark-mode .raised {
+  box-shadow: none;
+}
+body.dark-mode .modal-content {
+  background-color: #2c2c2e;
+}
+body.dark-mode .modal-content .contact-form label {
+  color: #aaa;
+}
+body.dark-mode .modal-content .contact-form .form-control {
+  background-color: #4c4c4e;
+  color: #f3f3f7;
+  border: none;
+}
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+  color: #f3f3f3;
+  transition: color 350ms;
+}
+body.dark-mode .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+body.dark-mode header#page {
+  background-color: #1e1f21 !important;
+}
 body.dark-mode section.main-head {
-  background: #333335;
+  background-color: #0f1f2c;
+}
+body.dark-mode section.main-head .btn.btn-success {
+  background: transparent;
+  border: none;
+  box-shadow: inset 0 0 0 2px #888;
+  transition: all 350ms linear;
+}
+body.dark-mode section.main-head .btn.btn-success:hover {
+  box-shadow: inset 0 0 0 4px #fff;
+}
+body.dark-mode section.main-head .inner .title {
+  color: #aaa;
+}
+body.dark-mode section.main-head .inner h3 {
+  color: #6dc3ff;
 }
 body.dark-mode #contentNavbar .list-group .list-group-item button {
   background-color: #333;
   color: #007bff;
 }
 body.dark-mode .dark-toggler {
-  background-color: #333335;
-  color: #f1f2f3;
+  background-color: #007bff;
+  color: #fff;
 }
 body.dark-mode #main-navbar-toggler {
   background: #f0f0f0;

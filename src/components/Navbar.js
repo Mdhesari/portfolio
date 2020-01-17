@@ -2,6 +2,7 @@ import React from "react"
 import { IoIosCall, IoIosMail } from "react-icons/io"
 import { Link } from "gatsby"
 import menus from "../constants/mainNavMenus"
+import { FaMoon } from "react-icons/fa"
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class Navbar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand navbar-light bg-light p-0">
+      <nav className="navbar navbar-expand navbar-light p-0">
         <button
           onClick={this.toggleMenu}
           id="main-navbar-toggler"
@@ -79,11 +80,11 @@ export default class Navbar extends React.Component {
               </li>
             ))}
 
-            {/* <li className="list-group-item">
+            <li className="list-group-item">
               <button onClick={this.toggleChangeMode} type="button" className="btn btn-default dark-toggler">
                 <span><FaMoon /></span>
               </button>
-            </li> */}
+            </li>
           </ul>
         </div>
       </nav>
