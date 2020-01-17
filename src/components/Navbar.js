@@ -53,7 +53,7 @@ export default class Navbar extends React.Component {
               rel="noopener noreferrer"
             >
               <IoIosMail />
-              &nbsp; contact@mdhesari.com
+              &nbsp; mdhesari99@gmail.com
             </a>
           </li>
         </ul>
