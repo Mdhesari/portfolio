@@ -27,7 +27,7 @@ export default class ContactModal extends React.Component {
 
   /**
    * validate event is triggered whenever form is submitted
-   * @param {event} e 
+   * @param {event} e
    */
   formValidate(e) {
     const handler = e.target
@@ -37,7 +37,7 @@ export default class ContactModal extends React.Component {
 
   /**
    * pass dom element and validate its *value*
-   * @param {object|document} handler 
+   * @param {object|document} handler
    */
   singleValidate(handler) {
     if (handler === null) {
@@ -90,12 +90,34 @@ export default class ContactModal extends React.Component {
     }
 
     if ("email" in validations) {
+      let input = String(text).toLowerCase()
+
+      isValid = false
+
       let re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      let is_email_valid = re.test(String(text).toLowerCase())
+      let is_email_valid = re.test(input)
 
       if (!is_email_valid) {
-        isValid = false
-        feedback = "Email is invalid"
+        if ("canNumber" in validations) {
+          re = /^(\+|00){0,2}(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$/
+
+          let is_number_valid = re.test(input)
+
+          if (is_number_valid) {
+            isValid = true
+          } else {
+            re = /^(\+)|[0-9]+/
+
+            if (re.test(input)) {
+              feedback =
+                "Phone number is not valid, start with your country code like +98"
+            }
+          }
+        }
+
+        if (!isValid && feedback === "") {
+          feedback = "Email is not valid, correct format : example@gmail.com"
+        }
       }
     }
 
@@ -149,17 +171,17 @@ export default class ContactModal extends React.Component {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email or Phone Number</label>
               <input
                 onBlur={this.formValidate}
                 type="text"
                 className={`form-control ${this.validateAssign(
                   this.state._replyto
                 )}`}
-                placeholder="mdhesari99@gmail.com"
+                placeholder="example@gmail.com"
                 name="_replyto"
                 id="email"
-                data-validation="required|email|max:255"
+                data-validation="required|email|canNumber|max:255"
               />
               <div className="invalid-feedback mt-2 ml-2">
                 {this.state._replyto_feedback}
@@ -201,7 +223,7 @@ export default class ContactModal extends React.Component {
 
     let elements = []
 
-    if (typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       elements = document.querySelectorAll(".form-control")
     }
 
@@ -239,7 +261,7 @@ export default class ContactModal extends React.Component {
         swal(alertData.success.title, alertData.success.body, "success")
         form.reset()
 
-        if (typeof document !== 'undefined')
+        if (typeof document !== "undefined")
           document.querySelector("#contact-close-btn").click()
 
         this.setState({

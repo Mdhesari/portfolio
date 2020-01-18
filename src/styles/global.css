@@ -515,7 +515,7 @@ section.main-head .inner p {
   height: 50px;
   border-radius: 50%;
   position: absolute;
-  background: #044ff1;
+  background: rgba(4, 79, 241, 0.7);
   color: #f0f0f0;
   left: -10px;
   bottom: -10px;
