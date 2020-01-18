@@ -21,7 +21,10 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={works.title} />
+      <SEO
+        title={works.title}
+        metaImage={has_pictures ? works.pictures[0].fluid.src : null}
+      />
       <Container>
         <article className="post post-full">
           <header className="post-header">
@@ -45,7 +48,9 @@ export default ({ data }) => {
               ""
             )}
             <div
-              className={`col-12 ${has_pictures ? "col-md-6" : ""} post-content`}
+              className={`col-12 ${
+                has_pictures ? "col-md-6" : ""
+              } post-content`}
             >
               <p
                 dangerouslySetInnerHTML={{

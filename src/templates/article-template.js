@@ -18,7 +18,14 @@ export default class ArticleTemplate extends React.Component {
 
     return (
       <Layout>
-        <SEO title={article.title} />
+        <SEO
+          title={article.title}
+          metaImage={
+            article.thumbnailImage !== null
+              ? article.thumbnailImage.fluid.src
+              : null
+          }
+        />
         <ArticleSingle article={article} />
       </Layout>
     )

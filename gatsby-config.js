@@ -7,7 +7,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
-    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
