@@ -31,22 +31,28 @@
 }
 
 @include media-breakpoint-down(md) {
+  .text-primary-title,
+  .text-primary-title a {
+    font-size: 34px;
+  }
+
+  .caption {
+    font-size: 18px;
+  }
+
   .masonry-grid {
-
     .list-group .list-group-item {
-      font-size:12px;
-
+      font-size: 10px;
     }
 
     .item {
       .item-wrapper {
-
         h5 {
-          font-size:1.18em;
+          font-size: 1.1em;
         }
 
         p {
-          font-size: 14px;
+          font-size: 12px;
         }
       }
     }
@@ -58,6 +64,16 @@
 
   .masonry-items {
     column-count: 2;
+  }
+
+  section.contact .inner-contact {
+    h3 {
+      font-size: 32px;
+    }
+
+    button {
+      font-size: 22px;
+    }
   }
 }
 

@@ -894,14 +894,23 @@ body.dark-mode #main-navbar-toggler {
   }
 }
 @media (max-width: 991.98px) {
+  .text-primary-title,
+.text-primary-title a {
+    font-size: 34px;
+  }
+
+  .caption {
+    font-size: 18px;
+  }
+
   .masonry-grid .list-group .list-group-item {
-    font-size: 12px;
+    font-size: 10px;
   }
   .masonry-grid .item .item-wrapper h5 {
-    font-size: 1.18em;
+    font-size: 1.1em;
   }
   .masonry-grid .item .item-wrapper p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .main-head-container {
@@ -910,6 +919,13 @@ body.dark-mode #main-navbar-toggler {
 
   .masonry-items {
     column-count: 2;
+  }
+
+  section.contact .inner-contact h3 {
+    font-size: 32px;
+  }
+  section.contact .inner-contact button {
+    font-size: 22px;
   }
 }
 @media (max-width: 1199.98px) {

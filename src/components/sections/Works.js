@@ -41,7 +41,7 @@ export default () => {
   const works = useStaticQuery(getWorks)
 
   return (
-    <section className="latest-works pt-5 pb-5">
+    <section className="latest-works pb-5">
       <div className="container-lg">
         <Title className="text-center pt-5">
           <Link to="/works/">Recent Works</Link>

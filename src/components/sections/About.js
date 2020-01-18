@@ -44,7 +44,7 @@ export default () => {
   resume = "https://" + resume.file.url
 
   return (
-    <section className="about-me">
+    <section className="about-me pb-5">
       <div className="container">
         <div className="row">
           <div className="col text-center">
