@@ -1,6 +1,6 @@
 /* public */
 html {
-  height: 100%;
+  overflow-y: initial;
 }
 
 body {
@@ -27,6 +27,7 @@ section,
 p {
   margin: 0;
   padding: 0;
+  @include animation-background-linear;
 }
 
 address {

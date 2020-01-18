@@ -1,7 +1,7 @@
 /* in the name of allah */
 /* public */
 html {
-  height: 100%;
+  overflow-y: initial;
 }
 
 body {
@@ -28,6 +28,11 @@ section,
 p {
   margin: 0;
   padding: 0;
+  -moz-transition: linear 300ms background-color;
+  -webkit-transition: linear 300ms background-color;
+  -o-transition: linear 300ms background-color;
+  -ms-transition: linear 300ms background-color;
+  transition: linear 300ms background-color;
 }
 
 address {
@@ -304,11 +309,11 @@ th {
 }
 .masonry-grid .item .item-wrapper,
 .masonry-grid .item .item-wrapper > .item-inner {
-  -moz-transition: all 300ms ease-out;
-  -webkit-transition: all 300ms ease-out;
-  -o-transition: all 300ms ease-out;
-  -ms-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
+  -moz-transition: ease-out 300ms all;
+  -webkit-transition: ease-out 300ms all;
+  -o-transition: ease-out 300ms all;
+  -ms-transition: ease-out 300ms all;
+  transition: ease-out 300ms all;
 }
 .masonry-grid .item .item-wrapper {
   display: inline-block;
@@ -515,7 +520,7 @@ section.main-head .inner p {
   height: 50px;
   border-radius: 50%;
   position: absolute;
-  background: rgba(4, 79, 241, 0.7);
+  background: #044ff1;
   color: #f0f0f0;
   left: -10px;
   bottom: -10px;
@@ -882,7 +887,6 @@ body.dark-mode .dark-toggler {
   color: #fff;
 }
 body.dark-mode #main-navbar-toggler {
-  background: #f0f0f0;
   color: #555;
 }
 

@@ -1,7 +1,7 @@
 /* in the name of allah */
 
 $profile-picc: 200px;
-$blog-card-border-radius:8px;
+$blog-card-border-radius: 8px;
 
 $mysize: (
   profile-picc: 200px,
@@ -21,19 +21,23 @@ $palette: (
   accent-red: #f45a4e,
 );
 
-@mixin animate($type) {
-  -moz-transition: all 300ms $type;
-  -webkit-transition: all 300ms $type;
-  -o-transition: all 300ms $type;
-  -ms-transition: all 300ms $type;
-  transition: all 300ms $type;
+@mixin animate($type, $where) {
+  -moz-transition: $where 300ms $type;
+  -webkit-transition: $where 300ms $type;
+  -o-transition: $where 300ms $type;
+  -ms-transition: $where 300ms $type;
+  transition: $where 300ms $type;
 }
 
 @mixin animation-ease-out {
-  @include animate(ease-out);
+  @include animate(all, ease-out);
 }
 @mixin animation-linear {
-  @include animate(linear);
+  @include animate(all, linear);
+}
+
+@mixin animation-background-linear {
+  @include animate(background-color, linear);
 }
 
 // bootstrap
