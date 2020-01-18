@@ -56,3 +56,7 @@
 @function _palette($keys...) {
   @return val($palette, $keys...);
 }
+
+@function _mysize($keys...) {
+  @return val($palette, $keys);
+}

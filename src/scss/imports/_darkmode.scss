@@ -1,6 +1,30 @@
 body.dark-mode {
   background-color: #151515;
 
+  .masonry-grid {
+    .item-box {
+      background-color: #1e1f21;
+
+      li.list-group-item {
+        color: #e91e63;
+      }
+
+      h5 {
+        color: #f3f3f3;
+      }
+
+      .item-wrapper:hover {
+        h5 {
+          color: #fff;
+        }
+      }
+
+      p {
+        color: #aaa;
+      }
+    }
+  }
+
   section.latest-works {
     background-color: transparent;
   }

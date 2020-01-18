@@ -1,12 +1,4 @@
 /* in the name of allah */
-@keyframes animate-menus {
-  0% {
-    bottom: -200px;
-  }
-  100% {
-    bottom: 0;
-  }
-}
 /* public */
 html {
   height: 100%;
@@ -168,6 +160,13 @@ th {
 }
 
 /* end public */
+.navbar .navbar-nav {
+  flex-direction: row;
+}
+.navbar .navbar-nav .nav-link {
+  margin-right: 1em;
+}
+
 .gallery-non-active {
   width: 100px;
   float: left;
@@ -256,6 +255,9 @@ th {
 
 .caption {
   width: 600px;
+}
+.caption p {
+  text-align: justify;
 }
 
 .text-primary-title,
@@ -361,6 +363,14 @@ th {
   background-clip: padding-box;
 }
 
+@keyframes animate-menus {
+  0% {
+    bottom: -200px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
 .icon-menu {
   background: #f1f2f3;
   border-radius: 1px;
@@ -764,6 +774,21 @@ footer.main-footer {
 body.dark-mode {
   background-color: #151515;
 }
+body.dark-mode .masonry-grid .item-box {
+  background-color: #1e1f21;
+}
+body.dark-mode .masonry-grid .item-box li.list-group-item {
+  color: #e91e63;
+}
+body.dark-mode .masonry-grid .item-box h5 {
+  color: #f3f3f3;
+}
+body.dark-mode .masonry-grid .item-box .item-wrapper:hover h5 {
+  color: #fff;
+}
+body.dark-mode .masonry-grid .item-box p {
+  color: #aaa;
+}
 body.dark-mode section.latest-works {
   background-color: transparent;
 }
@@ -863,6 +888,10 @@ body.dark-mode #main-navbar-toggler {
 
 /* responsive breakpoints */
 @media (max-width: 767.98px) {
+  .navbar-nav .nav-link {
+    font-size: 16px;
+  }
+
   .caption {
     width: 100%;
   }
@@ -894,6 +923,13 @@ body.dark-mode #main-navbar-toggler {
   }
 }
 @media (max-width: 991.98px) {
+  .post h1 {
+    font-size: 2rem;
+  }
+  .post .post-subtitle {
+    font-size: 1rem;
+  }
+
   .text-primary-title,
 .text-primary-title a {
     font-size: 34px;

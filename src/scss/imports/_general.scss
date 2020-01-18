@@ -164,6 +164,15 @@ th {
 }
 
 /* end public */
+
+.navbar .navbar-nav {
+  flex-direction: row;
+
+  .nav-link {
+    margin-right: 1em;
+  }
+}
+
 .gallery-non-active {
   width: 100px;
   float: left;
@@ -237,7 +246,7 @@ th {
 
 .blog-card:hover {
   .card-title {
-    color: $blue-primary;
+    color: _palette(primary);
   }
 }
 
@@ -253,6 +262,10 @@ th {
 
 .caption {
   width: 600px;
+
+  p {
+    text-align: justify;
+  }
 }
 
 .text-primary-title,
@@ -354,7 +367,7 @@ th {
   .item-box .item-wrapper:hover {
     .item-title,
     h5 {
-      color: $blue-primary;
+      color: _palette(primary);
     }
   }
 }

@@ -24,7 +24,7 @@ export default class Navbar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand navbar-light p-0">
+      <nav className="navbar navbar-light p-0">
         <button
           onClick={this.toggleMenu}
           id="main-navbar-toggler"
