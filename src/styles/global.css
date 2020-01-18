@@ -515,7 +515,7 @@ section.main-head .inner p {
   height: 50px;
   border-radius: 50%;
   position: absolute;
-  background: #8f8e8c;
+  background: #044ff1;
   color: #f0f0f0;
   left: -10px;
   bottom: -10px;
@@ -889,7 +889,7 @@ body.dark-mode #main-navbar-toggler {
 /* responsive breakpoints */
 @media (max-width: 767.98px) {
   .navbar-nav .nav-link {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .caption {
