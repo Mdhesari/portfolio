@@ -92,12 +92,12 @@ export default class ContactModal extends React.Component {
     if ("email" in validations) {
       let input = String(text).toLowerCase()
 
-      isValid = false
-
       let re = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
       let is_email_valid = re.test(input)
 
       if (!is_email_valid) {
+        isValid = false
         if ("canNumber" in validations) {
           re = /^(\+|00){0,2}(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$/
 
@@ -171,7 +171,7 @@ export default class ContactModal extends React.Component {
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email or Phone Number</label>
+              <label htmlFor="email">Email</label>
               <input
                 onBlur={this.formValidate}
                 type="text"
@@ -181,7 +181,7 @@ export default class ContactModal extends React.Component {
                 placeholder="example@gmail.com"
                 name="_replyto"
                 id="email"
-                data-validation="required|email|canNumber|max:255"
+                data-validation="required|email|max:255"
               />
               <div className="invalid-feedback mt-2 ml-2">
                 {this.state._replyto_feedback}
@@ -205,11 +205,13 @@ export default class ContactModal extends React.Component {
               </div>
             </div>
           </div>
-          <input
+          <button
+            id="contactSend"
             type="submit"
             className="btn btn-success shadow-none btn-full py-3 w-100 border-0 radius-0 form-validate"
-            value="Send"
-          />
+          >
+            Send
+          </button>
         </form>
       </SimpleModal>
     )
@@ -240,6 +242,8 @@ export default class ContactModal extends React.Component {
       return 0
     }
 
+    document.querySelector("#contactSend").innerHTML = "Loading..."
+
     // required info
     const form = ev.target
 
@@ -252,8 +256,17 @@ export default class ContactModal extends React.Component {
     // set headers
     xhr.setRequestHeader("Accept", "application/json")
     // check response
+    
+    xhr.onload = () => {
+      setTimeout(() => {
+        document.querySelector("#contactSend").innerHTML = "Send"
+      },500)
+    }
+
     xhr.onreadystatechange = () => {
       if (xhr.readyState !== XMLHttpRequest.DONE) return
+
+    
 
       if (xhr.status === 200) {
         // success
@@ -273,7 +286,7 @@ export default class ContactModal extends React.Component {
       } else {
         // failed
         this.setState({ status: 0 })
-        swal(alertData.has_error.title, alertData.error.body, "error")
+        swal(alertData.error.title, alertData.error.body, "error")
       }
     }
 
