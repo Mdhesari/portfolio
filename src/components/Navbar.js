@@ -18,8 +18,14 @@ export default class Navbar extends React.Component {
   }
 
   toggleChangeMode() {
-    if (typeof document !== 'undefined')
+    if (typeof document !== "undefined")
       document.body.classList.toggle("dark-mode")
+
+    let body_contains = document.body.classList.contains("dark-mode")
+
+    console.log(body_contains)
+
+    localStorage.setItem("dark-mode", body_contains)
   }
 
   render() {
@@ -81,8 +87,14 @@ export default class Navbar extends React.Component {
             ))}
 
             <li className="list-group-item">
-              <button onClick={this.toggleChangeMode} type="button" className="btn btn-default dark-toggler">
-                <span><FaMoon /></span>
+              <button
+                onClick={this.toggleChangeMode}
+                type="button"
+                className="btn btn-default dark-toggler"
+              >
+                <span>
+                  <FaMoon />
+                </span>
               </button>
             </li>
           </ul>
