@@ -242,7 +242,8 @@ export default class ContactModal extends React.Component {
       return 0
     }
 
-    document.querySelector("#contactSend").innerHTML = "Loading..."
+    if (typeof document !== "undefined")
+      document.querySelector("#contactSend").innerHTML = "Loading..."
 
     // required info
     const form = ev.target
@@ -256,17 +257,15 @@ export default class ContactModal extends React.Component {
     // set headers
     xhr.setRequestHeader("Accept", "application/json")
     // check response
-    
+
     xhr.onload = () => {
       setTimeout(() => {
         document.querySelector("#contactSend").innerHTML = "Send"
-      },500)
+      }, 500)
     }
 
     xhr.onreadystatechange = () => {
       if (xhr.readyState !== XMLHttpRequest.DONE) return
-
-    
 
       if (xhr.status === 200) {
         // success

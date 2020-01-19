@@ -21,11 +21,11 @@ export default class Navbar extends React.Component {
     if (typeof document !== "undefined")
       document.body.classList.toggle("dark-mode")
 
-    let body_contains = document.body.classList.contains("dark-mode")
+    if (typeof window !== "undefined") {
+      let body_contains = document.body.classList.contains("dark-mode")
 
-    console.log(body_contains)
-
-    localStorage.setItem("dark-mode", body_contains)
+      localStorage.setItem("dark-mode", body_contains)
+    }
   }
 
   render() {
