@@ -1,6 +1,14 @@
 body.dark-mode {
   background-color: #151515;
 
+  .text-darkable {
+    color: #f3f3f3;
+  }
+
+  .subtext-darkable {
+    color: #aaa;
+  }
+
   .masonry-grid {
     .item-box {
       background-color: #1e1f21;

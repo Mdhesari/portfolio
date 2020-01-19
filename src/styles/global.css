@@ -779,6 +779,12 @@ footer.main-footer {
 body.dark-mode {
   background-color: #151515;
 }
+body.dark-mode .text-darkable {
+  color: #f3f3f3;
+}
+body.dark-mode .subtext-darkable {
+  color: #aaa;
+}
 body.dark-mode .masonry-grid .item-box {
   background-color: #1e1f21;
 }
