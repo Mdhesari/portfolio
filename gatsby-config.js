@@ -32,7 +32,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `mdhesari`,
-        short_name: `portfolio website`,
+        short_name: `Mohamad Hesari`,
         start_url: `/`,
         background_color: `#f3f3f1`,
         theme_color: `#044ff1`,
