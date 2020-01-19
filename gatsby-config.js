@@ -7,6 +7,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -33,8 +34,8 @@ module.exports = {
         name: `mdhesari`,
         short_name: `portfolio website`,
         start_url: `/`,
-        background_color: `#f3f6f9`,
-        theme_color: `#f3f6f9`,
+        background_color: `#f3f3f1`,
+        theme_color: `#044ff1`,
         display: `minimal-ui`,
         icon: `src/images/md-icon-32.png`, // This path is relative to the root of the site.
       },
