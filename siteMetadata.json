@@ -16,7 +16,7 @@
   "contact": {
     "alert": {
       "success": {
-        "title": "Thank you! I'll be in touch soon",
+        "title": "Thank you! I'll be in touch soon.",
         "body": "Make sure, you have provided right information.",
         "button_text": "Ok, sure"
       },
